@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>名家与画-安格尔</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			body,html{
+			    scroll-behavior: smooth ;
+			}
+			.nav{
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.shell {
+				width: 100%;
+				position: relative;
+				padding: 80px 0;
+				transition:0.3s ease 0s;
+				background-attachment: fixed ;
+				background-size: cover;
+			}
+			.shell:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(99,99,99,0.8);
+				content:"";
+			}
+			
+			.header {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 100px;
+				position: relative;
+			}
+			
+			.title{
+				color: #FFFF99;
+				font-size:144px;
+				font-weight: normal;
+				margin-top:-20px;			
+				font-family: "幼圆";
+				text-shadow: 0 8px 16px rgba(0,0,0,1);
+			}
+			.yinyan{
+				color: #fff;
+				font-size:24px;
+				font-weight: normal;
+				width:1200px;
+				margin: 0 auto;
+				text-indent:2em;
+				line-height: 40px;
+				padding-bottom: 10px;
+				font-family: "幼圆";
+				text-align: left;
+			}
+			
+			*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins',sans-serif;          			
+		}
+		body{
+			dispaly: flex;
+			justify-content: center;
+			align-items; center;
+			min-height: 100vh;
+			background: #0f0f0f;
+		}
+		.container{
+			position: relative;
+			width: 100%;
+			height: 800px;
+			display: flex;
+		    justify-content: center;
+			align-items; center;
+		}
+		.container .card{
+			position: absolute;
+			top:30px;
+			width: 358px;
+			height: 618px;
+			border-radius: 8px;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    color: rgba(0,0,0,0.2);
+		    font-size: 8em;
+		    font-weight: 700;
+		    border: 10px solid rgba(0,0,0,0.1);
+		    cursor: pointer;
+		    transition: 0.8s;		    
+		    transform-origin: 50% 100%;
+		    transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i)
+			* 120px), -50px);
+			color: rgba(0,0,0,0.25);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+		}
+		.container #c1{
+			 background-image:url(名家与画/安格尔.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			 background-color: darkred;
+		}
+		.container #c2{
+			 background-image:url(名家与画/大卫.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			background-color: #333;
+		}
+		.container #c3{
+			 background-image:url(名家与画/雅姆·蒂索.png );
+			 background-repeat:no-repeat ;	
+			 background-size:338px 600px;
+			 background-color: #333;
+		}
+		.container .card:hover{
+			translate: calc(var(--i) * 20px) -50px;
+			z-index: 100;
+		}
+			.zhiyin1{
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                right:50%;
+                margin-right:-750px;
+                top:700px; 
+                z-index:101; 
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				right:75px;
+                bottom:60px;
+                z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                bottom:70px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:75px;
+                bottom:75px;
+                z-index:10;
+			}
+			#dingwei1{
+				position:relative;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+				padding-top:20px;	
+			}
+			#dingwei1 img{
+				position:absolute;
+			}
+			#dingwei2 img{
+			position:absolute;
+			}
+			.timeline{
+				display: flex;
+				margin-left:30px;
+				margin-right:35px;
+				flex-wrap: wrap;
+				flex-direction: column;
+				max-width: 1500px;
+				position: relative;
+				margin: 0 auto;
+			}	
+			.content-title{
+				font-weight: normal;
+				font-size:40px;
+				margin:10px auto;
+				transition: 0.4s;
+				padding: 0 10px;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+			}
+			.text{
+				margin-right:50px;
+				}
+			.underline-1{
+				font-weight: normal;
+				font-size:24px;
+				transition: 0.4s;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+				}
+			.underline-2{
+				font-weight: normal;
+				font-size:18px;
+				font-family: "仿宋";
+				transition: 0.4s;
+				color: rgba(255,255,255,0.7);
+				box-sizing: border-box;
+				text-indent:2em;
+				}
+			.content{
+				width: 100%;
+				margin-left:30px;
+				}
+			.content-desc{
+				margin:0 auto;
+				font-size: 22px;
+				box-sizing: border-box;
+				color: rgba(255,255,255,0.7);
+				line-height: 44px;
+				text-indent:2em;
+				width: calc(80% - 5px);
+			}
+			.timeline:before {
+				position: absolute;
+				left: 600px;
+				width: 2px;
+				height: 100%;
+				margin-left:-1px;
+				content:"";
+				background: rgba(255,255,255,0.07);
+			}
+			.item{
+				margin-left: 7px;
+				padding-bottom:300px;
+				padding-left:50px
+				opacity: 0.3;
+				filter: blur(2px);
+				transition: 0.5s;
+				box-sizing:border-box;
+				width: calc(100% + 100px);
+				display: flex;
+				position: relative;
+				transform: translateY(-80px);	
+			}
+			.item:before{
+				content: attr(data-text);
+				letter-spacing: 3px;
+				width:100%;
+				position: absolute;
+				color: rgba(255,255,255,0.5);
+				font-size: 13px;
+				border-left: 2px solid rgba(255,255,255,0.5);
+				top:70%;
+				margin-top: -5px;
+				padding-left: 15px;
+				opacity: 0;
+				right: calc(-100% - 56px);
+				font: 900 20px '';
+				letter-spacing: 5px;
+			}
+			.item:nth-child(even){
+			    align-self: flex-end;	
+			}
+			.item:nth-child(even):before {
+				right: auto;
+				text-align: right;
+				left: calc(-100% - 56px);
+				padding-left: 0;
+				border-left: none;
+				border-right: 2px solid rgba(255,255,255,0.5);
+				border-right: 15px;
+			}
+			.item--active{
+				opacity: 1;
+				transform: translateY(0);
+				filter:blur(0px);
+			}
+			.item--active:before{
+				top:50%;
+				transition: 0.3s all 0.2s;
+				opacity: 1;
+			}
+			.item-active .content-title {
+				margin: -50px 0 20px 0;
+			}
+			.img{
+				width:520px;
+				box-shadow:0 10px 15px rgba(0,0,0,0.4);	
+				padding:50px;
+			}
+			.subtitle{
+				color: rgba(255,255,255,0.5);
+				font-size: 48px;
+				letter-spacing: 5px;
+				margin: 10px 0 0 0;
+				font-weight: normal;
+				padding-top:20px;
+				padding-bottom:50px;
+			}
+			.footer{
+				padding: 95px 0;
+				text-align:center;
+			}
+			.footer a{
+				color: #999;
+				display: inline-block;
+			}
+			@media only screen and (max-width: 767px) {
+				.item{
+					align-self:baseline !important;
+					width:100%;
+					padding: 0 30px 150px 80px;
+		    }
+				.item:before {
+					left: 10px !important;
+					padding:0 !important;
+					top: 50px;
+					text-align: center !important;
+              	    width: 60px;
+              	    border: none !important;
+		    }
+			    .item:last-child {
+				    padding-bottom: 40px ;				
+			}
+			@media only screen and (max-width: 767px){
+			   	.timeline:before {
+			   		left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#dingwei1"><img src="svg/了解更多.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle1"/></a>
+        	<a href="#dingwei1"><img src="svg/向下箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->
+
+
+<div class="shell" id="shell">
+			<div class="header">
+				
+				<!--人头part-->
+        <div class="container">
+			<a href="名家与画-安格尔.html" class="card" id="c1" style="--i:-3;"></a>
+			<a href="名家与画-大卫.html" class="card" id="c2" style="--i:0;"></a>
+			<a href="名家与画-雅姆·蒂索.html" class="card" id="c3" style="--i:3;"></a>
+		</div>
+<!--人头part-->		
+			</div>
+			<div id="dingwei1">           	
+            	</div>
+		<div class="timeline">
+			
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="安格尔/安格尔2.jpg" alt="" class="img" width="520px" height="600px" />
+			<p class="underline-1">安格尔自画像  1807</p>
+				</div>
+				
+			<div class="text">
+			<p class="content-title">让-奥古斯特-多米尼克•安格尔</p>
+			<p class="content-title">(Jean Ingres，1780-1867)</p>
+			<p class="content-desc">
+					让-奥古斯特-多米尼克•安格尔是继大卫之后法国新古典主义画派的最后代表。
+					</p>
+					<p class="content-desc">
+					1780年8月29日，生于蒙托邦，他的父亲约瑟夫·安格尔是蒙托邦皇家美术院院士，母亲是皇宫假发师的女儿，从小受到良好的艺术熏陶。
+					6岁时，安格尔被父亲送入教会学校学习，后转入图卢兹学院学习美术。
+                </p>
+                    <p class="content-desc">
+					1797年 17岁的安格尔前往巴黎，投入当时正担任拿破仑首席画师的大卫门下。
+					两年后，被美术学院录取。
+					1801年，以《阿伽门农的使者》一画获罗马大奖。由于拿破仑的战争使法国国库无法支付他在罗马的奖学金，安格尔被迫留在巴黎。
+                </p>
+            </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content" id="Ajia">
+			<img src="安格尔/阿迦门农的使节.png" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">阿迦门农的使节  1801</p>
+			<p class="underline-2">在“特洛伊战争”当中，希腊的勇士阿基留斯，因为与统帅阿伽门农不和，停止了战斗，退出了自己的阵地。
+				阿基留斯的母亲忒提斯，为维护自己儿子的荣誉，向朱庇特提出自己愿意领路，使希腊军失败。这样一来，可以迫使希腊军方重新起用阿基留斯。
+				当希腊军大有败之势时，果如所料，阿伽门农派出使者去拜访阿基留斯，请他复出参加战斗，以挽回败局。
+				 这件作品描绘的便是使者到访的场景，作品中阿基留斯停下了弹奏，眼望着阿伽门农的使者，站起来的瞬间。
+				</p>
+                <p class="underline-2">他与帕特洛克罗斯二人微微颤动的肌肉，显示出的弹性，与正值壮年的使者们厚重、健壮的躯体，都给观者留下了深刻的印象。
+				 前景中人物的安排井然有序，中景根据水平线与垂直线，简单地描绘了营寨，后景中希腊士兵们，通过光的增减，表现了人物的神色。
+				 俄底修斯的形象，依据的是罗马时代做刻的公元前5世纪的希腊雕像。帕特洛克罗斯像，参照的是古代希腊神话中的盖尼梅德。此作荣获了1801年的“罗马奖”。</p>
+				</div>
+				
+			<div class="text">
+			<h2 class="content-title">意大利时期：拿破仑时代终结</h2>
+			<p class="content-desc">
+                1806-1810年，安格尔两次启程前往意大利，并成为了一名拿破仑官员和政要的肖像画家。
+                1811年，应邀参与重新装修奎里纳尔宫的改造，安格尔创作了《罗穆卢斯，阿克龙的征服者》和《奥西恩的梦想》。
+                                随着拿破仑帝国的垮台和法国撤离罗马，这段相对繁荣的时期在1815年戛然而止。
+            </p>
+            <p class="content-desc">
+                                安格尔开始对工作感到绝望，并诉诸于游客创作小幅肖像。
+                                这些绘画的特点展示了安格尔对线条几乎不可思议的控制，通过人物姿势以及手势揭示了模特的个性，描绘精确，使人印象深刻。
+                                尽管这些肖像画成为安格尔最受推崇的作品系列，但他本人却轻视它们，认为它们不过是大杂烩。
+            </p>
+				</div>
+		    </div>
+		    
+		    <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content" id="DaGong">
+			         <img src="安格尔/大宫女.jpg" alt="" class="img" width="520px" height="auto" />
+			         <p class="underline-1">大宫女  1866</p>
+			          <p class="underline-2">
+			          	《大宫女》是安格尔画的土耳其宫中宫女闺房生活的情景，具有浓郁的东方情调。首先，就新古典主义绘画风格而言，它破坏了色彩的"音域"，背景的蓝色与皮肤的淡黄色，
+			          	人体的明暗与粉红色调等，都显得极不协调；其次，裸女体态的夸张，成了变形美的试验。就此而言，安格尔显示了自己艺术的独立性和美学信念的独立性。倘若从历史的角度去看，
+			          	安格尔的探索勇气是值得称道的。	          	
+			          </p>
+				</div>
+				
+			<div class="text">
+			    <p class="content-title">《大宫女》</p>
+			    <p class="content-desc">
+					1814年，安格尔创造了《大宫女》，并在1819年的沙龙展出，这幅画受到了批评家强烈的攻击。
+                                他们嘲笑安格尔削弱了造型，扭曲了女性裸体。
+                                一位评论家曾开玩笑说画中的女人的三块椎骨太多了，她疯狂扩张的臀部和橡胶般的、无骨的右臂，构成了一种只能存在于艺术家色情想象的存在。
+			       </p>		
+
+            </div>
+		</div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="安格尔/路易十三的誓愿.jpg" alt="" class="img" width="520px" height="auto" />
+				</div>
+			
+			<div class="text">
+			<p class="content-title">路易十三的誓愿 1824</p>
+			<p class="content-desc">
+				 1820年，安格尔迁到佛罗伦萨，采用了一种更传统的古典风格，并接受了大批肖像画的订作。
+                1824年，在法国展出《路易十三的誓愿》，受到官方赞扬，这也使他从法国最受诟病的艺术家变成了最著名的艺术家。
+                1825年，他在巴黎开办自己的学校。1825年，被选为皇家美术院院士。
+                1835-1841年，担任罗马法兰西学院院长，在担任法兰西学院院长的期间，他主要负责行政和教学工作。
+                                这六年的时间里，他只完成了三幅主要的作品。
+          </p>   
+            <p class="content-desc" style="font-family:'楷体';">
+            	在最终的《路易十三的誓愿》油画的定稿中，除了圣母是眼眸低垂之外，其余皆不一样了。
+				画中的圣母是站立着，双手合十放于右胸口前，眼眸低垂，一件宽大的，似乎不合适的长袍遮住了她身体的绝大部分。
+				宽大的袍子使得画面人物轮廓成一个基本长方形，十分有厚重感，画面的视角略微仰视，很多宗教神圣人物的绘画，常常采用这种仰视的视角。</p>
+			<p class="content-desc" style="font-family:'楷体';">
+			这幅画给人们第一个视觉感受，是模仿拉斐尔的造型和画法，对此安格尔并不忌讳。
+                                他说道：“请问著名的艺术大师哪个不模仿别人？从虚无中是创造不出新东西的，只有构思中渗透着别人的东西。
+                                所以从事文学艺术的人在某种程度上说，都是荷马的子孙。”</p>
+            </div>
+		    </div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="安格尔/泉.png" alt="" class="img" width="520px" height="auto" />
+			</div>
+				
+		    <div class="text">
+			<p class="content-title">艺术到达顶峰</p>
+			<p class="content-desc">
+			1841年，安格尔回到巴黎，继续创作了多幅巨作。
+            1856年，象征“清高绝俗和庄严肃穆的美”的最杰出的作品《泉》的诞生，标志着安格尔艺术达到光辉的顶峰。
+            1863年，蒙托邦市赠予他黄金桂冠。1867年1月14日，因肺炎卒于巴黎，享年87岁。
+			</p>	
+			<p class="content-title" style="font-family:'楷体';">泉 1830-1856</p>
+			<p class="content-desc" style="font-family:'楷体';">
+			《泉》，别名《春之仙女》，安格尔于1830年至1856年所创作的一幅布面油画，现藏于法国奥塞美术馆。
+                        该画运用柔和并且富有变化曲色彩和柔美的曲线，表现出女性人体的古典之美。
+                        年轻的裸女手拿陶罐，让里面的水缓缓地倾倒出来，微屈的双膝和因举起陶罐所表现出的肌肉曲线营造一种典雅、纯洁的脱俗之美。</p>
+			
+			<h2 class="content-title">大卫与安格尔</h2>
+					<p class="content-desc">
+					安格尔师出名门，是雅克-路易·大卫的得意门生。	
+					</p>
+					<p class="content-desc">
+					大卫的“新古典主义”体现在借用古典主义题材和表现形式，直接描绘现实斗争中的重大事件和英雄人物，
+						具有鲜明的现实主义倾向，所以被称之为革命的古典主义。
+						而安格尔追求的则是完美形式的和典范风格的学院古典主义，在一定程度上夸大了理性作用，弱化了情感和个性。
+						而同时代的浪漫主义画派则弥补了这些方面的不足。	
+					</p>
+					<p class="content-desc">
+						在新古典主义后期理性有余，革命热情不足。
+						这使得当时的绘画谨守古典，仅局限于循古典法则展现人体美。
+						画面只剩下典雅庄重，消失了可贵的革命精神和时代感。						
+					</p>
+            </div>
+		    </div>
+		    
+		
+	        
+	        <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="安格尔/路易·伯坦像.png" alt="" class="img" width="520px" height="auto" />
+				</div>
+	        <div class="text">
+			
+					 <p class="content-title" style="font-family:'楷体';">路易·伯坦像 1832</p>
+			<p class="content-desc" style="font-family:'楷体';">这是安格尔最著名的画像之一。这幅画像比任何其他画像都更优秀地表现出这位艺术家对七月王朝和第二帝国期间法国统治阶层的清晰理解。</p>
+            <p class="content-desc" style="font-family:'楷体';">
+                        该画所绘的是一位实业家，《辩论报》的创办人和社长，他几乎是正面坐在扶手椅，双手搁在膝盖上。
+                        这幅画像由于构图的简单严谨、人物姿态的稳重大方及这位艺术家所具有的非凡的心理洞察力，绘出了令人赞叹的人物形象。
+                        其形象被纳入一个金字塔式的结构当中，占去画面的大半篇幅，画面的其余部分则淹没在深暗的背景之内，背景的右侧是明亮的（它那黄褐色的色调与衣服的顏色十分协调），仿佛是要进一步增加形体的分量。</p>
+            <p class="content-desc" style="font-family:'楷体';">
+                        人物并没有倚着扶手的靠背，而是略向前探着身子，气势夺人，粗大的胳膊支撑在膝盖上，稳稳当当地坐着，威信自重，坚韧不拔的样子。他以一种宛如挑战的自信神情，把面孔转向观众，而由于目光的犀利，嘴角的皱纹、略显蓬乱的头发，也就使得他那自信的神情更加突出了。</p>
+            <p class="content-desc" style="font-family:'楷体';">
+                        每个细节都是用写实手法和几近超现实主义的忠实性绘出的：如从扶手椅的扶手上的反射出的光线到搁在膝盖上的双手。</p>
+            <p class="content-desc" style="font-family:'楷体';">
+                        从此画中可以看出安格尔在棕褐色色调谐调上所下的功夫。在棕褐色色调的衬托下，衬衫的白色、头发的银灰色、面容的色调以及背景上有光亮的那一部分的暖色，都更加抢眼而引人注意。</p>
+
+                
+				</div>
+		</div>
+	        
+	        <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="安格尔/达芬奇之死.jpg" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">达芬奇之死 1851</p>
+			<p class="underline-2">这幅画描绘了意大利艺术家和发明家莱昂纳多·达·芬奇于1519年5月2日在昂布瓦兹的Clos Lucé家去世的情景。
+				作为这幅画的灵感来源，安格尔采用了《乔治-瓦萨里传》中关于画家死亡的故事。
+				法国国王弗朗西斯一世拥抱着奄奄一息的画家，接受他的最后一口气，而其他人物，包括牧师和仆人都在观察这一幕。
+				年轻的瓦卢斯王储弗朗西斯悲伤地观察着这一幕，一位红衣主教将一只手放在他的肩膀上安慰他。
+				在莱昂纳多床边的一张桌子上，你可以看到一本圣经和一个小十字架。弗朗西斯科一世的脸占据了提香的一幅画，可以追溯到1538年。</p>
+				</div>
+	        
+	        <div class="text">
+			<h2 class="content-title">新古典主义和浪漫主义的辩论</h2>
+					<p class="content-desc">
+					安格尔的声誉如日中天时，也正是古典主义面临终结，浪漫主义崛起的时代，他和新生的浪漫主义代表人德拉克洛瓦之间发生许多次辩论。
+					浪漫主义强调色彩的运用，古典主义则强调轮廓的完整和构图的严谨，安格尔把持的美术学院对新生的各种画风嗤之以鼻，形成学院派风格。
+					安格尔作为新古典主义的最后代表，他的去世也预示了新古典主义的大船逐渐向浪漫主义启航。
+					</p>	
+				</div>
+		   </div>
+	
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向上箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->	    
+
+</div>	
+	
+	
+
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	    <script>	
+	    	(function ($){
+	    		$.fn.timeline = function(){
+	    			var selectors = {
+	    				id: $(this),
+	    				item: $(this).find(".item"),
+	    				activeClass: "item--active",
+	    				img:".img"
+	    			};
+//	    			激活第一个时间轴项目,并设置时间轴背景图片为第一个项目图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                	"background-image",
+                	"url(" +
+                	selectors.item.first()
+                	.find(selectors.img)
+                	.attr("src") +
+                	")"
+                );
+                	//获取时间轴项目的总数
+                	var itemLength = selectors.item.length;
+                	//当页面滚动时，触发滚动事件
+                	$(window).scroll(function () {
+                	var max, min;
+                	//获取页面滚动的距离
+                	var pos = $(this).scrollTop();
+                	selectors.item.each(function (i) {
+                		//获取当前时间轴项目的最小和最大高度
+                		min = $(this).offset().top;
+                		max = $(this).height() + $(this).offset().top;
+                		var that = $(this);
+                		//如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                		//则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目
+                		if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                			selectors.item.removeClass(selectors.activeClass);
+                			selectors.id.css(
+                				"background-image",
+                				"url(" +
+                				selectors.item.last()
+                				.find(selectors.img)
+                				.attr("src") +
+                			")"
+                		);
+                		selectors.item.last().addClass(selectors.activeClass);
+                	}
+                	//如果当前位置在当前项目的最小和最大高度之间，
+                    //则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                    else if (pos <= max - 10 && pos >= min) {
+                    	selectors.id.css(
+                    		"background-image",
+                    		"url(" + 
+                    		$(this)
+                    		    .find(selectors.img)
+                    		    .attr("src") + 
+                    		    ")"
+                    	);
+                    	selectors.item.removeClass(selectors.activeClass);
+                    	$(this).addClass(selectors.activeClass);
+                    }
+                 });
+            });
+       };
+    })(jQuery)
+    /*
+     * 最后，我们调用 timeline 插件并传入时间轴的 ID作为参数。
+     * 这将启用时间轴插件并为该时间轴绑定滚动事件。
+     */
+    $("#shell").timeline();
+	    </script>	
+
+	</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>名家与画-雅姆·蒂索</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			/*body{
+				background-repeat:repeat ;	
+				background-size:cover;
+				perspective: 20000px;
+			}*/
+			body,html{
+			    scroll-behavior: smooth ;
+			}
+			.nav{
+				/*position:fixed;*/
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.shell {
+				width: 100%;
+				position: relative;
+				padding: 80px 0;
+				transition:0.3s ease 0s;
+				background-attachment: fixed ;
+				background-size: cover;
+			}
+			.shell:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(99,99,99,0.8);
+				content:"";
+			}
+			
+			.header {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 100px;
+				position: relative;
+			}
+			
+			.title{
+				color: #FFFF99;
+				font-size:144px;
+				font-weight: normal;
+				margin-top:-20px;			
+				font-family: "幼圆";
+				text-shadow: 0 8px 16px rgba(0,0,0,1);
+			}
+			.yinyan{
+				color: #fff;
+				font-size:24px;
+				font-weight: normal;
+				width:1200px;
+				margin: 0 auto;
+				text-indent:2em;
+				line-height: 40px;
+				padding-bottom: 10px;
+				font-family: "幼圆";
+				text-align: left;
+			}
+			
+			*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins',sans-serif;          			
+		}
+		body{
+			dispaly: flex;
+			justify-content: center;
+			align-items; center;
+			min-height: 100vh;
+			background: #0f0f0f;
+		}
+		.container{
+			position: relative;
+			width: 100%;
+			height: 800px;
+			display: flex;
+		    justify-content: center;
+			align-items; center;
+		}
+		.container .card{
+			position: absolute;
+			top:30px;
+			width: 358px;
+			height: 618px;
+			border-radius: 8px;
+		    /*background: #5e5cfc;*/
+		   
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    color: rgba(0,0,0,0.2);
+		    font-size: 8em;
+		    font-weight: 700;
+		    border: 10px solid rgba(0,0,0,0.1);
+		    cursor: pointer;
+		    transition: 0.8s;
+		    
+		    transform-origin: 50% 100%;
+		    /*背景颜色生成*/
+		    /*filter:hue-rotate(calc(var(--i) * 50deg));*/
+		    
+		    /*box-shadow: 0 15px 50px rgba(0,0,0,0.1);*/
+		    
+		    transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i)
+			* 120px), -50px);
+			color: rgba(0,0,0,0.25);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+		}
+		.container #c1{
+			 background-image:url(名家与画/安格尔.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			 background-color: #333;
+		}
+		.container #c2{
+			 background-image:url(名家与画/大卫.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			background-color: #333;
+		}
+		.container #c3{
+			 background-image:url(名家与画/雅姆·蒂索.png );
+			 background-repeat:no-repeat ;	
+			 background-size:338px 600px;
+			 background-color: darkred;
+		}
+		/*.container:hover .card{
+			transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i)
+			* 120px), -50px);
+			color: rgba(0,0,0,0.25);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+		}*/
+		/*.container:hover .card{
+			background: #333;
+		}*/
+		.container .card:hover{
+			translate: calc(var(--i) * 20px) -50px;
+			z-index: 100;
+		}
+			
+			
+			.zhiyin1{
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                right:50%;
+                margin-right:-750px;
+                top:700px; 
+                z-index:101; 
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				right:75px;
+                bottom:60px;
+                z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                bottom:70px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:75px;
+                bottom:75px;
+                z-index:10;
+			}
+			#dingwei1{
+				position:relative;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+				padding-top:20px;	
+			}
+			#dingwei1 img{
+				position:absolute;
+			}
+			#dingwei2 img{
+			position:absolute;
+			}
+			.timeline{
+				display: flex;
+				margin-left:30px;
+				margin-right:35px;
+				flex-wrap: wrap;
+				flex-direction: column;
+				max-width: 1500px;
+				position: relative;
+				margin: 0 auto;
+			}	
+			.content-title{
+				font-weight: normal;
+				font-size:40px;
+				margin:10px auto;
+				transition: 0.4s;
+				padding: 0 10px;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+			}
+			.text{
+				margin-right:50px;
+				}
+			.underline-1{
+				font-weight: normal;
+				font-size:24px;
+				transition: 0.4s;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+				}
+			.underline-2{
+				font-weight: normal;
+				font-size:18px;
+				font-family: "仿宋";
+				transition: 0.4s;
+				color: rgba(255,255,255,0.7);
+				box-sizing: border-box;
+				text-indent:2em;
+				}
+			.content{
+				width: 100%;
+				margin-left:30px;
+				}
+			.content-desc{
+				margin:0 auto;
+				font-size: 22px;
+				box-sizing: border-box;
+				color: rgba(255,255,255,0.7);
+				line-height: 33px;
+				text-indent:2em;
+				width: calc(80% - 5px);
+			}
+			.timeline:before {
+				position: absolute;
+				left: 600px;
+				width: 2px;
+				height: 100%;
+				margin-left:-1px;
+				content:"";
+				background: rgba(255,255,255,0.07);
+			}
+			.item{
+				margin-left: 7px;
+				padding-bottom:300px;
+				padding-left:50px
+				opacity: 0.3;
+				filter: blur(2px);
+				transition: 0.5s;
+				box-sizing:border-box;
+				width: calc(100% + 100px);
+				display: flex;
+				position: relative;
+				transform: translateY(-80px);	
+			}
+			.item:before{
+				content: attr(data-text);
+				letter-spacing: 3px;
+				width:100%;
+				position: absolute;
+				color: rgba(255,255,255,0.5);
+				font-size: 13px;
+				border-left: 2px solid rgba(255,255,255,0.5);
+				top:70%;
+				margin-top: -5px;
+				padding-left: 15px;
+				opacity: 0;
+				right: calc(-100% - 56px);
+				font: 900 20px '';
+				letter-spacing: 5px;
+			}
+			.item:nth-child(even){
+			    align-self: flex-end;	
+			}
+			.item:nth-child(even):before {
+				right: auto;
+				text-align: right;
+				left: calc(-100% - 56px);
+				padding-left: 0;
+				border-left: none;
+				border-right: 2px solid rgba(255,255,255,0.5);
+				border-right: 15px;
+			}
+			.item--active{
+				opacity: 1;
+				transform: translateY(0);
+				filter:blur(0px);
+			}
+			.item--active:before{
+				top:50%;
+				transition: 0.3s all 0.2s;
+				opacity: 1;
+			}
+			.item-active .content-title {
+				margin: -50px 0 20px 0;
+			}
+			.img{
+				width:520px;
+				box-shadow:0 10px 15px rgba(0,0,0,0.4);	
+				padding:50px;
+			}
+			.subtitle{
+				color: rgba(255,255,255,0.5);
+				font-size: 48px;
+				letter-spacing: 5px;
+				margin: 10px 0 0 0;
+				font-weight: normal;
+				padding-top:20px;
+				padding-bottom:50px;
+			}
+			.footer{
+				padding: 95px 0;
+				text-align:center;
+			}
+			.footer a{
+				color: #999;
+				display: inline-block;
+			}
+			@media only screen and (max-width: 767px) {
+				.item{
+					align-self:baseline !important;
+					width:100%;
+					padding: 0 30px 150px 80px;
+		    }
+				.item:before {
+					left: 10px !important;
+					padding:0 !important;
+					top: 50px;
+					text-align: center !important;
+              	    width: 60px;
+              	    border: none !important;
+		    }
+			    .item:last-child {
+				    padding-bottom: 40px ;				
+			}
+			@media only screen and (max-width: 767px){
+			   	.timeline:before {
+			   		left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#dingwei1"><img src="svg/了解更多.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle1"/></a>
+        	<a href="#dingwei1"><img src="svg/向下箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->
+
+
+<div class="shell" id="shell">
+			<div class="header">
+				
+				<!--人头part-->
+        <div class="container">
+			<a href="名家与画-安格尔.html" class="card" id="c1" style="--i:-3;"></a>
+			<a href="名家与画-大卫.html" class="card" id="c2" style="--i:0;"></a>
+			<a href="名家与画-雅姆·蒂索.html" class="card" id="c3" style="--i:3;"></a>
+		</div>
+<!--人头part-->		
+			</div>
+			<div id="dingwei1">
+            	</div>
+		<div class="timeline">
+			
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="雅姆·蒂索/蒂索3.jpg" alt="" class="img" width="520px" height="600px" />
+			<p class="underline-1">雅姆•蒂索自画像  1894</p>
+				</div>
+				
+			<div class="text">
+			<p class="content-title">雅姆•蒂索</p>
+			<p class="content-title">(James Tissot 1836-1902)</p>
+			<p class="content-desc">
+					雅姆•蒂索所处的时代正值印象派盛行，但他却选择成为一名居住在伦敦的维多利亚新古典主义画家。
+			</p>		
+			<p class="content-desc">
+					1836年10月15日，雅姆•蒂索出生于法国南特（法国西部港口城市）一个中产阶级家庭。
+                	他最初在巴黎的 Beaux 艺术学院学习。
+                	早期的画主要是历史，这主要来自于荷兰学校教育的严重影响。
+                	在当时作为一位年轻人最好的不冒风险的是学习印象派画家的风格。
+            </p> 
+            </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="雅姆·蒂索/普法战争.PNG" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">1870年普法战争</p>
+				</div>
+				
+			<div class="text">
+			<p class="content-title">迁往伦敦</p>
+			<p class="content-desc">
+					而这一切的平静都被1870年的普法战争所打破。
+					法国在这场战争中的败北及其随后的巴黎公社的建立，促使1871年蒂索一家决定搬到伦敦居住。
+				      这次移居成为他人生的转折点。
+			</p>		
+			<p class="content-desc">
+				      初到伦敦由于生活所迫，他需要很快地赚些钱。
+				      因此，他开始绘制些有关伦敦上层社会生活的作品，把英国维多利亚古典文化搬到画中，这些作品很快引起公众的关注，特别是受到崇拜英国经典文化的社会阶层的追捧。
+				      但也引发不少评论家的争议。
+				      
+            </p> 
+           </div>
+		    </div>
+		    
+		    <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			         <img src="雅姆·蒂索/皇家社交圈.jpg" alt="" class="img" width="520px" height="auto" />
+			         <p class="underline-1">皇家路俱乐部成员 1866</p>
+			          <p class="underline-2">这幅作品是皇家路俱乐部的12名成员向蒂索订制的集体肖像画。
+			          	背景为一处可俯瞰协和广场的酒店露台，蒂索对建筑的描绘和对人物的布局符合新古典主义风格。
+			          	成员中既有伯爵、侯爵等贵族世家，也有工业革命后的新贵，他们姿态自然、衣着得体，但相互之间缺乏交流，整幅作品更像是一张照片。
+			          </p>
+				</div>
+				
+			<div class="text">
+			    <p class="content-title">遭遇质疑与敌意</p>
+			    <p class="content-desc">
+					雅姆•蒂索的成功在伦敦引起了他的印象主义画派同事们的相当的妒忌，当时他被那些同行们视为一个小人物。
+                                      对雅姆•蒂索的作品的充满敌意的评论在今天看来都难以理解的。
+			       </p>		
+			    <p class="content-desc">      
+                                      主要的批评是指责他的画像是一张相片，而且是那样的平庸。
+                                      在当时，虽然绘画表现出了耀眼的技艺和高卢人的智慧和诡辩是那些在英国的艺术家们所不能相比较的。
+                                      同时由于敌对的评论及其当时英国社会等级意识严重使得这些表现社会阴暗面的画作不是一下子被人们接受。  
+                   </p> 
+            </div>
+		</div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content" id="ZuoMeng">
+			<img src="雅姆·蒂索/做梦的女人.png" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">做梦的女人 1876</p>
+			<p class="underline-2"> 1876年，蒂索遇见了凯思琳并很快坠入了爱河。此后他闭门不出，潜心画了大量的女性和爱情的作品，凯思琳经常在他的画中出现。
+				《做梦的女人》画的是一个年轻、漂亮、懒散、爱幻想的女子，展现了她迷人优柔、深沉忧郁和迷茫慵懒的气质。
+				这个愁病交加的女人散发出一种淡淡的倦意，有一种不可抵抗的魅力。</p>
+			</div>
+			
+			<div class="text">
+			<p class="content-title">遇见爱情：蒂索画中的永恒女神</p>
+			<p class="content-desc">
+					在蒂索的作品中，很多的主题是表现生活与爱情，而他的一段短暂的爱情几乎影响了他的一生。
+			</p>		
+			<p class="content-desc">
+					1876年，蒂索在伦敦遇见了年轻有魅力的凯思琳，而凯思琳是刚离婚，她是嫁给一位在印度服役的英国军官， 
+					但凯思琳却和另外一个男人有了关系并生下了个孩子，因此而被遣返回英国。
+                                    蒂索让这位带着个孩子，背负当时多方面耻辱的凯思琳搬进他在伦敦的家。
+                                    这一生活方式的改变使得一个久经世故、穿着得体、非常看好的画家变成了社会公众谈笑的话题。
+            </p>                         
+            <p class="content-desc">                        
+                                    为此,蒂索远离社会同凯思琳一起来到他的郊外小树林别墅里共同过着平静的生活。
+                                    除了招待一下极少数来自艺术界的朋友外，凯思琳变成了蒂索唯一的女神。
+                                    这段期间蒂索画了大量的作品，而凯思琳的身影经常出现在他的画中。 
+            </p> 
+            </div>
+		    </div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content" id="TaiWu">
+			<img src="雅姆·蒂索/泰晤士河.png" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">泰晤士河 1876</p>
+			<p class="underline-2">此作品参加了1876年的英国皇家美术学院展览，引起强烈反响。
+				画面中是两个年轻女子和一位英国皇家海军军官，坐在有香槟酒的货船上。
+				两位女子没有年长女性的陪同，在当时的人们看来是过于随便甚至放荡了。
+				有评论认为整个画面的色彩显得很“脏”，恰如画作所呈现的内容。</p>
+				</div>
+				
+		    <div class="text">
+			<p class="content-title">泰晤士河的悲剧爱情</p>
+			<p class="content-desc">
+					英国居住期间，另外的一个吸引蒂索作画的是伦敦的港口和泰晤士河。
+			</p>		
+			<p class="content-desc">
+                                    他以泰晤士河为背景而作的画使我们有与其他作品中所感受到的不同的艺术风格。
+                    然而，1882年凯思琳因得了肺炎而不幸去世，当时只有28岁。                                     
+            </p>                         
+            <p class="content-desc">                        
+                                    这段爱情仅仅维持了六年，蒂索很长时间不能从这突然而来的悲剧中恢复过来，在心爱的人去世一周后他搬回了巴黎。
+                                    他把伦敦的房子卖给画家塔德玛，从此不再接触任何女人。
+                                    一个伟大的艺术家与他美丽堕落的女人及其一个悲惨的爱情故事。这几乎就是他的一生。
+            </p> 
+            </div>
+		    </div>
+		    
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="雅姆·蒂索/蒂索2.png" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">蒂索自画像 1894</p>
+				</div>
+				
+		    <div class="text">
+			<p class="content-title">英国的珍贵遗产：蒂索的艺术成就与影响</p>
+			<p class="content-desc">
+                                    此后蒂索继续在巴黎社会写生，但是很快放弃这些并投身于宗教场景绘画。他两次访问中东地区去寻找作画的宗教真正背景。                                   
+            </p>                         
+            <p class="content-desc">                                         
+                                在这以后Tissot开始对唯心论感兴趣，他的作画动机取决于这个感兴趣的东西是否神秘。
+                1902年8月8日，蒂索在法国布容去世。他的一生画了大量的作品。
+                                许多作品仍然受到很多英国人的喜爱。画集、海报以及作品的衍生品至今仍然是伦敦的畅销品，受到很多喜爱艺术的人收藏。
+                                他的艺术成就给英国留下一笔珍贵的遗产。                    
+            </p>
+             <p class="content-desc"> 
+             	而更让人敬佩的是，在他的笔下是个诱惑的世界，但他的心却是那么纯真。也许，他的全部寄托是放在他的作品中。
+                                近几年来，日本和美国的收藏家们开始挖掘蒂索画作的真正价值。那些过去批评家充满敌意的评论却成为最好的欣赏蒂索作品的看点。
+             	</p>
+            </div>
+		    </div>
+	</div>	
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向上箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->	    
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	    <script>	
+	    	(function ($){
+	    		$.fn.timeline = function(){
+	    			var selectors = {
+	    				id: $(this),
+	    				item: $(this).find(".item"),
+	    				activeClass: "item--active",
+	    				img:".img"
+	    			};
+//	    			激活第一个时间轴项目,并设置时间轴背景图片为第一个项目图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                	"background-image",
+                	"url(" +
+                	selectors.item.first()
+                	.find(selectors.img)
+                	.attr("src") +
+                	")"
+                );
+                	//获取时间轴项目的总数
+                	var itemLength = selectors.item.length;
+                	//当页面滚动时，触发滚动事件
+                	$(window).scroll(function () {
+                	var max, min;
+                	//获取页面滚动的距离
+                	var pos = $(this).scrollTop();
+                	selectors.item.each(function (i) {
+                		//获取当前时间轴项目的最小和最大高度
+                		min = $(this).offset().top;
+                		max = $(this).height() + $(this).offset().top;
+                		var that = $(this);
+                		//如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                		//则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目
+                		if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                			selectors.item.removeClass(selectors.activeClass);
+                			selectors.id.css(
+                				"background-image",
+                				"url(" +
+                				selectors.item.last()
+                				.find(selectors.img)
+                				.attr("src") +
+                			")"
+                		);
+                		selectors.item.last().addClass(selectors.activeClass);
+                	}
+                	//如果当前位置在当前项目的最小和最大高度之间，
+                    //则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                    else if (pos <= max - 10 && pos >= min) {
+                    	selectors.id.css(
+                    		"background-image",
+                    		"url(" + 
+                    		$(this)
+                    		    .find(selectors.img)
+                    		    .attr("src") + 
+                    		    ")"
+                    	);
+                    	selectors.item.removeClass(selectors.activeClass);
+                    	$(this).addClass(selectors.activeClass);
+                    }
+                 });
+            });
+       };
+    })(jQuery)
+    /*
+     * 最后，我们调用 timeline 插件并传入时间轴的 ID作为参数。
+     * 这将启用时间轴插件并为该时间轴绑定滚动事件。
+     */
+    $("#shell").timeline();
+	    </script>	
+
+	</body>
+</html>

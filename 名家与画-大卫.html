@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>名家与画-大卫</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			body,html{
+			    scroll-behavior: smooth ;
+			}
+			.nav{
+				/*position:fixed;*/
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.shell {
+				width: 100%;
+				position: relative;
+				padding: 80px 0;
+				transition:0.3s ease 0s;
+				background-attachment: fixed ;
+				background-size: cover;
+			}
+			.shell:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(99,99,99,0.8);
+				content:"";
+			}
+			
+			.header {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 100px;
+				position: relative;
+			}
+			
+			.title{
+				color: #FFFF99;
+				font-size:144px;
+				font-weight: normal;
+				margin-top:-20px;			
+				font-family: "幼圆";
+				text-shadow: 0 8px 16px rgba(0,0,0,1);
+			}
+			.yinyan{
+				color: #fff;
+				font-size:24px;
+				font-weight: normal;
+				width:1200px;
+				margin: 0 auto;
+				text-indent:2em;
+				line-height: 40px;
+				padding-bottom: 10px;
+				font-family: "幼圆";
+				text-align: left;
+			}
+			
+			*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins',sans-serif;          			
+		}
+		body{
+			dispaly: flex;
+			justify-content: center;
+			align-items; center;
+			min-height: 100vh;
+			background: #0f0f0f;
+		}
+		.container{
+			position: relative;
+			width: 100%;
+			height: 800px;
+			display: flex;
+		    justify-content: center;
+			align-items; center;
+		}
+		.container .card{
+			position: absolute;
+			top:30px;
+			width: 358px;
+			height: 618px;
+			border-radius: 8px;
+		    /*background: #5e5cfc;*/
+		   
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    color: rgba(0,0,0,0.2);
+		    font-size: 8em;
+		    font-weight: 700;
+		    border: 10px solid rgba(0,0,0,0.1);
+		    cursor: pointer;
+		    transition: 0.8s;
+		    
+		    transform-origin: 50% 100%;
+		    /*背景颜色生成*/
+		    /*filter:hue-rotate(calc(var(--i) * 50deg));*/
+		    
+		    /*box-shadow: 0 15px 50px rgba(0,0,0,0.1);*/
+		    
+		    transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i)
+			* 120px), -50px);
+			color: rgba(0,0,0,0.25);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+		}
+		.container #c1{
+			 background-image:url(名家与画/安格尔.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			 background-color: #333;
+		}
+		.container #c2{
+			 background-image:url(名家与画/大卫.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+			background-color: darkred;
+		}
+		.container #c3{
+			 background-image:url(名家与画/雅姆·蒂索.png );
+			 background-repeat:no-repeat ;	
+			 background-size:338px 600px;
+			 background-color: #333;
+		}
+		.container .card:hover{
+			translate: calc(var(--i) * 20px) -50px;
+			z-index: 100;
+		}
+			
+			
+			.zhiyin1{
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                right:50%;
+                margin-right:-750px;
+                top:700px; 
+                z-index:101; 
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				right:75px;
+                bottom:60px;
+                z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                bottom:70px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:75px;
+                bottom:75px;
+                z-index:10;
+			}
+			#dingwei1{
+				position:relative;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+				padding-top:20px;	
+			}
+			#dingwei1 img{
+				position:absolute;
+			}
+			#dingwei2 img{
+			position:absolute;
+			}
+			.timeline{
+				display: flex;
+				margin-left:30px;
+				margin-right:35px;
+				flex-wrap: wrap;
+				flex-direction: column;
+				max-width: 1500px;
+				position: relative;
+				margin: 0 auto;
+			}	
+			.content-title{
+				font-weight: normal;
+				font-size:40px;
+				margin:10px auto;
+				transition: 0.4s;
+				padding: 0 10px;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+			}
+			.text{
+				margin-right:50px;
+				}
+			.underline-1{
+				font-weight: normal;
+				font-size:24px;
+				transition: 0.4s;
+				box-sizing: border-box;
+				color: #FFFF99;
+				text-align: center;
+				}
+			.underline-2{
+				font-weight: normal;
+				font-size:18px;
+				font-family: "仿宋";
+				transition: 0.4s;
+				color: rgba(255,255,255,0.7);
+				box-sizing: border-box;
+				text-indent:2em;
+				}
+			.content{
+				width: 100%;
+				margin-left:30px;
+				}
+			.content-desc{
+				margin:0 auto;
+				font-size: 22px;
+				box-sizing: border-box;
+				color: rgba(255,255,255,0.7);
+				line-height: 40px;
+				text-indent:2em;
+				width: calc(80% - 5px);
+			}
+			.timeline:before {
+				position: absolute;
+				left: 600px;
+				width: 2px;
+				height: 100%;
+				margin-left:-1px;
+				content:"";
+				background: rgba(255,255,255,0.07);
+			}
+			.item{
+				margin-left: 7px;
+				padding-bottom:300px;
+				padding-left:50px
+				opacity: 0.3;
+				filter: blur(2px);
+				transition: 0.5s;
+				box-sizing:border-box;
+				width: calc(100% + 100px);
+				display: flex;
+				position: relative;
+				transform: translateY(-80px);	
+			}
+			.item:before{
+				content: attr(data-text);
+				letter-spacing: 3px;
+				width:100%;
+				position: absolute;
+				color: rgba(255,255,255,0.5);
+				font-size: 13px;
+				border-left: 2px solid rgba(255,255,255,0.5);
+				top:70%;
+				margin-top: -5px;
+				padding-left: 15px;
+				opacity: 0;
+				right: calc(-100% - 56px);
+				font: 900 20px '';
+				letter-spacing: 5px;
+			}
+			.item:nth-child(even){
+			    align-self: flex-end;	
+			}
+			.item:nth-child(even):before {
+				right: auto;
+				text-align: right;
+				left: calc(-100% - 56px);
+				padding-left: 0;
+				border-left: none;
+				border-right: 2px solid rgba(255,255,255,0.5);
+				border-right: 15px;
+			}
+			.item--active{
+				opacity: 1;
+				transform: translateY(0);
+				filter:blur(0px);
+			}
+			.item--active:before{
+				top:50%;
+				transition: 0.3s all 0.2s;
+				opacity: 1;
+			}
+			.item-active .content-title {
+				margin: -50px 0 20px 0;
+			}
+			.img{
+				width:520px;
+				box-shadow:0 10px 15px rgba(0,0,0,0.4);	
+				padding:50px;
+			}
+			.subtitle{
+				color: rgba(255,255,255,0.5);
+				font-size: 48px;
+				letter-spacing: 5px;
+				margin: 10px 0 0 0;
+				font-weight: normal;
+				padding-top:20px;
+				padding-bottom:50px;
+			}
+			.footer{
+				padding: 95px 0;
+				text-align:center;
+			}
+			.footer a{
+				color: #999;
+				display: inline-block;
+			}
+			@media only screen and (max-width: 767px) {
+				.item{
+					align-self:baseline !important;
+					width:100%;
+					padding: 0 30px 150px 80px;
+		    }
+				.item:before {
+					left: 10px !important;
+					padding:0 !important;
+					top: 50px;
+					text-align: center !important;
+              	    width: 60px;
+              	    border: none !important;
+		    }
+			    .item:last-child {
+				    padding-bottom: 40px ;				
+			}
+			@media only screen and (max-width: 767px){
+			   	.timeline:before {
+			   		left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#dingwei1"><img src="svg/了解更多.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle1"/></a>
+        	<a href="#dingwei1"><img src="svg/向下箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->
+
+
+<div class="shell" id="shell">
+			<div class="header">
+				
+				<!--人头part-->
+        <div class="container">
+			<a href="名家与画-安格尔.html" class="card" id="c1" style="--i:-3;"></a>
+			<a href="名家与画-大卫.html" class="card" id="c2" style="--i:0;"></a>
+			<a href="名家与画-雅姆·蒂索.html" class="card" id="c3" style="--i:3;"></a>
+		</div>
+<!--人头part-->		
+			</div>
+			<div id="dingwei1">
+            	</div>
+		<div class="timeline">
+			
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="大卫/大卫2.jpg" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">雅克-路易·大卫自画像  1791</p>
+				</div>
+				
+			<div class="text">
+			<p class="content-title">雅克-路易·大卫</p>
+			<p class="content-title">（Jacques-Louis David，1748 - 1825）</p>
+			<p class="content-desc">
+				雅克-路易·大卫是法国大革命时期的杰出画家，新古典主义画派的开创者和奠基人。
+			</p>		
+			<p class="content-desc">
+				大卫出生在巴黎一个服饰用品商的家里，9岁成为孤儿，由他的叔父彼隆抚养。酷爱绘画的大卫在亲友帮助下被送到布歇那里学画，
+				布歇发现大卫的气质与自己的洛可可风格不一致，就将他转到皇家美术院教授维恩门下。
+            </p> 
+            <p class="content-desc">
+            1766年秋大卫开始了在学院的学习，通过临摹雕塑品和研究古典绘画，他逐步掌握了学院派的一般规律，随后也加入了罗马大奖的角逐。
+                        大卫并不是天才，他个性沉默寡言，喜欢思考，不太合群，缺少典雅，使人感到少年老成，他以惊人的毅力和勤奋刻苦精神，认真地学习过大量名家的画。
+            </p> 
+            </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="大卫/拿破仑一世加冕大典.jpg" alt="" class="img" width="520px" height="400px" />
+			<p class="underline-1">拿破仑一世加冕大典 1808- 1822</p>
+			<p class="underline-2">
+			雅克-路易·大卫在创作《拿破仑一世加冕大典》这幅大型油画的过程中，雅克-路易·大卫先在巴黎圣母院的平面图上耐心地配置了每个人的位置，并为主要出场人物作了素描，
+			他还借来了仪式中穿用的衣物进行揣摩。在画面中央位置是拿破仑和他的妻子约瑟芬皇后，两人穿着刺绣锦缎，上面镶满了珍贵的宝石。在他们身后是教皇彼奥七世，
+			周围则是美国、西班牙、意大利各国的外交官和政治家。这场加冕仪式在当时颇具戏剧性，教皇曾想在各国代表的面前把皇冠戴在拿破仑的头上，但拿破仑却用双手接过皇冠，自己戴在了头上。
+			雅克-路易·大卫原想表现出拿破仑为自己授冠这个场面，但这样来免显得太过外露，于是他就改画为拿破仑为皇后授冠，强调和平的场面。</p>
+				</div>
+				
+			<div class="text">
+			<p class="content-title">模仿到创新:摸爬滚打</p>
+			<p class="content-desc">
+			    23岁的大卫第一次参加罗马奖考试，考题是智慧女神雅典娜与战神马尔斯的战斗，艺术风格基本上是模仿罗可可风格，
+			    但是人物形象情绪激烈、步伐沉重，因此画面很不协调而落选。
+                               直到27岁，大卫历经3次失败后才获得罗马奖赴罗马留学。
+                               他在罗马学习期间为古代希腊罗马艺术遗迹所感动，产生了研究和学习的浓厚兴趣，他下决心暂时不搞艺术创作，专心钻研希腊罗马雕刻，认真画了4年的素描，
+                32岁时曾带着一幅素描稿《帕脱克卢斯的葬仪》回巴黎沙龙展出。
+                               在接受古代艺术影响的同时，大卫在思想政治上也受到古罗马共和政体的潜移默化，滋生了反对封建专制统治的政治热情。
+                               后来他竭力想借用古代希腊罗马的艺术样式，传达自己的政治见解和思想感情。
+			</p>		
+			<p class="content-desc">
+				      初到伦敦由于生活所迫，他需要很快地赚些钱。
+				      因此，他开始绘制些有关伦敦上层社会生活的作品，把英国维多利亚古典文化搬到画中，这些作品很快引起公众的关注，特别是受到崇拜英国经典文化的社会阶层的追捧。
+				      但也引发不少评论家的争议。
+				      
+            </p> 
+           </div>
+		    </div>
+		    
+		    <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			         <img src="大卫/贺拉斯兄弟之誓.jpg" alt="" class="img" width="520px" height="auto" />
+			         <p class="underline-1">贺拉斯兄弟之誓 1784</p>
+			          <p class="underline-2">
+			          	 这件暗示共和，颂扬为国牺牲的巨幅作品，以三个圆拱门将整个画面分为三部分。
+			          	 左边是在父亲面前宣誓的贺拉斯三兄弟，他们有着强壮的体魄，匀称的比例以及大多以直线构成的形体和姿势。
+			          	 中间是手举武器带领儿子们宣誓的老父亲。右边则是由曲线和柔软姿态表现的几位妇女的形象。
+			          	 画面突出地显露出一种质朴和古罗马式的庄严感，男子的刚毅和女性的孱弱对比鲜明。
+			          	 尽管构图平淡，人物姿态过于戏剧化，但仍不失为一幅唤起人们革命斗志和牺牲精神的具有鼓动性的作品。			          	
+			          </p>
+			           <p class="underline-2">
+			          	
+			          </p>
+				</div>
+				
+			<div class="text">
+			    <p class="content-title" id="HeLa">《贺拉斯兄弟宣誓》</p>
+			    <p class="content-desc">
+				他说过：“艺术必须帮助全体民众的幸福与教化，艺术必须向广大民众揭示市民的美德和勇气”。
+                                从此，大卫把艺术作为反封建的战斗武器使用，作为战士登上了画坛和政坛。《贺拉斯兄弟宣誓》就是他在这个时期的代表作品。
+                                如果说罗可可艺术是路易十五时代为适应快要上断头台的没落贵族阶级的空虚心灵的需要，那大卫的艺术是直接为资产阶级大革命服务的。
+                                大卫在新的时代背景下不断探索艺术创作，突破了古典主义的因袭陈规，比启蒙思潮下的写实主义更进一步地描绘了时代的革命斗争现实，
+                                他借历史题材揭示如何建立和巩固新的社会制度与新的社会风尚的革命思想。
+                 </p>
+                <p class="content-desc">
+                                此画取材于罗马故事，罗马城与毗邻的阿尔贝城争夺最高统治权，为避免大规模的流血，双方达成协议，各选出三名勇士代表本城同对方格斗，
+			          胜者则有统治权，画中荷拉斯家三兄弟被选中代表罗马城，临行前他们在父亲面前宣誓，表明为祖国而放弃个人私情，不获胜将战死沙场的决心。
+			          而与之交战的邻国战士中，恰好有三兄弟的姐妹的未婚夫。这个极富有戏剧性的情节，被大卫用直与曲、刚与柔的对比手法表现出来。
+			          这一主题正切合当时的时势，获得一片喝彩声。
+			      </p>		
+            </div>
+		</div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="大卫/马拉之死.jpg" class="img" width="520px" height="auto" />
+			<p class="underline-1">马拉之死 1799</p>
+			<p class="underline-2">  
+				 整个画面平静、庄重，省略了一切无关大局的细节，力求简单质朴，既无纷繁的色彩，也无复杂的透视和道具。
+				 尽管表现的是可怕的暗杀，画家丝毫没有渲染血腥和恐怖，而是着意刻画马拉之死的崇高和宁静。
+				 由此可见画家在他的创作中始终遵循古典艺术的原则，力图保持更多的理性。 
+				 《马拉之死》表现的就是马拉在浴缸中被刺死后的场景，画中的马拉表情充满愤怒和痛苦构图中无情的水平线只用无力下垂的右臂做突破，似乎失去任何挽救的希望。
+				 画面上没有繁多的色彩，也没有复杂的缩短法，力求单纯。
+				 大卫试图用他的画笔唤起人们单纯质朴的感情和坚贞的正义感。</p>
+			</div>
+			
+			<div class="text" id="MaLa">
+			<p class="content-title">《马拉之死》 </p>
+			<p class="content-desc">
+					当大革命的风暴到来时，大卫不仅仅是画家，他还作为社会活动家、革命家积极投身于革命斗争。
+			</p>		
+			<p class="content-desc">
+                                他被选为国民议会的议员，成为革命领袖罗伯斯庇尔的战友，并以国民教育委员的身份从事大量的革命艺术活动。
+                                他公开倡导艺术必须为政治斗争服务，他说：“艺术不是目的，而是手段，它为了帮助某一个政治概念的胜利而存在”。
+                                在大革命中，大卫根据国民议会的建议创作了一些具有鲜明革命时代特征的肖像画，其中最杰出的是《马拉之死》。
+           </p>   
+           <p class="content-desc">
+                              马拉是法国大革命时期雅阁宾派的主要领导人之一，“人民之友”报的主编，他以犀利文笔猛烈抨击法国封建王朝，宣扬共和思想，遭到王党的嫉恨。
+				 由于为了躲避迫害长时间躲在地窖里工作而染上湿疹，不得不每天泡在浴缸里几个小时并且处理工作和文件。 
+				 一天，保皇党女刺客，右翼保皇党分子夏洛帝·柯黛以申请困难救济为名，谎称自己是一位共和党人的遗孀，五个孩子的母亲，请求马拉接见并给予帮助。
+				 正当马拉阅读她递上的纸条时，凶狠的女刺客用匕首刺进了马拉的胸膛，他倒在了血泊之中，马拉被害的消息一时震动了巴黎城。
+				 大卫是马拉的朋友，当他闻讯后立即赶到现场亲眼目睹了马拉被害的惨相，用三个月的时间完成了这件作品。 
+				 这幅竖构图的画面非常简洁，背景那片毫无修饰的墙面，仅有光线的细微变化，马拉靠在一个浴缸里，他一只手无力地垂落在缸外，
+				 另一只手拿着字条，头后仰，面部带着平静的表情，就像工作劳累后闭目小憩一样，鲜血从他的胸膛流出。
+				 马拉由于患有皮肤病，不得不每天数小时浸泡在药水中治疗，他常一边治病一边处理公务。
+				 大卫便把马拉表现为在浴缸里工作而突然遇刺身亡。
+		     </p> 
+            </div>
+		    </div>
+		
+		<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="大卫/劫夺萨宾妇女.jpg" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">劫夺萨宾妇女 1799</p>
+			<p class="underline-2">《萨宾妇女》是一个脍炙人口的主题，被历代画家描绘过。
+				它取材于古代罗马故事，相传罗马人建国后缺少妇女，于是他们便将萨平城青年妇女劫夺来做自己的妻子。
+				萨宾人当然不会善罢甘休，经过几年积蓄力量后，他们向罗马人宣战，决心夺回自己的姐妹。
+				当罗马武士同萨宾军队展开生死搏斗之际，已为罗马人之妻并生下孩子的萨宾妇女痛苦万分，她们冲到两军之间，用自己的身躯将其分隔开。
+				因为一方是她们的父兄，另一方是她们的丈夫。
+				大卫遵循古典主义的原则，在画中并未渲染战争的激烈和残酷，而是把一个个裸体武士画得像舞台上的演员，摆着优美的姿态。
+				只有那些英勇无畏的妇女和地上哭喊着的孩子们引起观者的同情和怜爱。</p>
+				</div>
+				
+		    <div class="text">
+			<p class="content-title">大卫的艺术之巅与落寞:《萨宾妇女》</p>
+			<p class="content-desc">
+				1794年是大卫艺术生涯中最光辉的年月，他的艺术充满了时代革命气息，具有鲜明的政治思想倾向性，
+				并将古典主义的艺术形式和现实的时代生活相结合，成为一位革命艺术家。                    
+			</p>		
+			<p class="content-desc">
+                                但是随着“热月党”政变，雅各宾党政权被推翻，大卫被捕入狱，出狱后看到国家发生的变化令他触目惊心。
+                                革命的理想破灭了，整个社会陷于黑暗恐怖的深渊，这使达维德心灰意冷，又无能为力。  
+                                从此在创作上他放弃了现实的题材，又沉浸在对古代社会的向往之中，再也没有画过富有革命激情的作品。                
+            </p>                         
+            <p class="content-desc">                        
+                                他在那黑暗的岁月里停止了一切社会活动，情绪非常消沉，艺术生命也面临枯竭。
+                                这时的画家期望和平，在这样的心境下创作了《萨宾妇女》。
+                                我们从大卫的经历和艺术生涯中，可以明显地看到一个艺术家只有投身于时代的变革，才能创造出震撼人心的优秀作品，一旦脱离时代和人民大众，艺术生命也就枯萎了。
+            </p> 
+            <p class="content-desc">   
+                         当拿破仑夺取政权建立帝制以后，大卫又为拿破仑服务，成为帝国的首席画家，这一时期他创作了很多反映拿破仑的英雄业绩和形象的作品。
+            1816年拿破仑被推翻，波旁王朝复辟，将曾对处死路易十六投赞成票的大卫驱逐，他被迫迁居比利时布鲁塞尔，最终客死异国。
+             	</p>
+            </div>
+		    </div>
+		    
+	    <div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+			<img src="大卫/苏格拉底之死.jpg" alt="" class="img" width="520px" height="auto" />
+			<p class="underline-1">苏格拉底之死 1787</p>
+			<p class="underline-2">《苏格拉底之死》现藏于纽约大都会美术馆。 这幅油画描绘了哲学家苏格拉底死时的情景。
+			被囚于狱中的苏格拉底，被判刑后饮鸩自杀，在这惊心动魄的瞬间，苏格拉底镇静自若，左手高举，表明信仰不变！周围哀恸的人们增添了画面的悲剧性。
+			新古典主义的手法，使画面获得了凝重、刚毅、冷峻的艺术效果。</p>
+				</div>
+				
+		    <div class="text">
+			<p class="content-title">绘画风格</p>
+			<p class="content-desc">
+		       
+                      大卫喜欢研究古希腊、古罗马的艺术，并从中寻求美的源泉和理想，他也很擅长以那个时期的题材和风格来进行创作。 
+                      例如《苏格拉底之死》这幅油画中描绘了哲学家苏格拉底死时的情景。                                   
+                      为了研究古典艺术，他学习了四五年左右的素描，因此而打下了扎实的基本功。             
+            </p>                         
+            <p class="content-desc">                                         
+                      大卫给后辈的艺术家留下了宝贵的经验和教训。
+			他曾说过一些激励人心的话，至今对我们艺术创造仍有教育意义，他说：“绘画不是技巧，技巧不能构成画家。”     
+			他还说：“拿调色板的不一定是画家，拿调色板的手必须服从头脑”。这些都成为画家的箴言。                               
+            </p>
+            </div>
+		    </div>
+		
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向上箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->	
+</div>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	    <script>	
+	    	(function ($){
+	    		$.fn.timeline = function(){
+	    			var selectors = {
+	    				id: $(this),
+	    				item: $(this).find(".item"),
+	    				activeClass: "item--active",
+	    				img:".img"
+	    			};
+//	    			激活第一个时间轴项目,并设置时间轴背景图片为第一个项目图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                	"background-image",
+                	"url(" +
+                	selectors.item.first()
+                	.find(selectors.img)
+                	.attr("src") +
+                	")"
+                );
+                	//获取时间轴项目的总数
+                	var itemLength = selectors.item.length;
+                	//当页面滚动时，触发滚动事件
+                	$(window).scroll(function () {
+                	var max, min;
+                	//获取页面滚动的距离
+                	var pos = $(this).scrollTop();
+                	selectors.item.each(function (i) {
+                		//获取当前时间轴项目的最小和最大高度
+                		min = $(this).offset().top;
+                		max = $(this).height() + $(this).offset().top;
+                		var that = $(this);
+                		//如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                		//则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目
+                		if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                			selectors.item.removeClass(selectors.activeClass);
+                			selectors.id.css(
+                				"background-image",
+                				"url(" +
+                				selectors.item.last()
+                				.find(selectors.img)
+                				.attr("src") +
+                			")"
+                		);
+                		selectors.item.last().addClass(selectors.activeClass);
+                	}
+                	//如果当前位置在当前项目的最小和最大高度之间，
+                    //则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                    else if (pos <= max - 10 && pos >= min) {
+                    	selectors.id.css(
+                    		"background-image",
+                    		"url(" + 
+                    		$(this)
+                    		    .find(selectors.img)
+                    		    .attr("src") + 
+                    		    ")"
+                    	);
+                    	selectors.item.removeClass(selectors.activeClass);
+                    	$(this).addClass(selectors.activeClass);
+                    }
+                 });
+            });
+       };
+    })(jQuery)
+    /*
+     * 最后，我们调用 timeline 插件并传入时间轴的 ID作为参数。
+     * 这将启用时间轴插件并为该时间轴绑定滚动事件。
+     */
+    $("#shell").timeline();
+	    </script>	
+
+	</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<link rel="stylesheet" href="css/焦点图切换轮播图.css">
+		<link rel="stylesheet" href="css/手风琴效果图.css">
+		<link rel="stylesheet" href="css/tab选项卡.css">
+		<title>佳作欣赏</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+				box-sizing: border-box;  
+			}
+			body{
+			    background-image: url(佳作欣赏/焦点图切换轮播图/主图-画室.png) ;
+			    background-size: cover ;
+			    background-position: bottom;
+			    min-height: 100vh;	
+			}
+			html{
+			    scroll-behavior: smooth ;
+			}
+			.nav{
+				/*position:fixed;*/
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.biaoti{    
+		    	position:relative;
+		    	top: 30px;
+		    	width: 450px;
+		    	height: 500px;
+		    }
+            .biaoti .biao{
+            	color: #FFFF99;
+            	position:absolute;
+            	width: 440px;
+				text-align: center;
+				font-size: 100px ;			
+				z-index: 2;
+				color: 
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+				font-family: "楷体";
+            	font-weight:900;
+            }
+           .biaoti .ti{
+            	position:absolute
+				margin-right:250px;
+				margin-top:150px;
+				font-size: 24px ;	
+				/*width:450px;*/		
+				text-indent:2em;
+				z-index: 2;
+				color: white;
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+				
+				/*border: 5px solid aqua;*/
+				font-family: "楷体";
+				font-weight:500;
+            }
+            .shang{
+            	display: flex;
+            	justify-content: center;
+                align-items: center;
+            }
+            .zhiyin1{
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:-650px;
+                top:740px; 
+                z-index:101; 
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				left:150px;
+                bottom:5px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				left:225px;
+                bottom:70px;
+                z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                top:2900px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:0px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:70px;
+                bottom:85px;
+                z-index:10;
+			}
+			
+			.dawe{
+				right: 50%;
+				top: 50%;
+				margin-right: -700px;
+				margin-top: -250px;
+				position:absolute;
+            	/*height: auto;*/
+            	width: 60px;
+				text-align: center;
+				/*margin-top:100px;*/
+				font-size: 60px ;			
+				z-index: 2;
+				color: #FFFF99;
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+				/*border: 5px solid aqua;*/
+				font-family: "楷体";
+				font-weight: 900;
+			}
+			#xinniang{
+				right: 50%;
+				top: 50%;
+				margin-right: 550px;
+				margin-top: 850px;
+				position:absolute;
+            	width: 60px;
+				text-align: center;
+				font-size: 60px ;			
+				z-index: 2;
+				color: #FFFF99;
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+				font-family: "楷体";
+				font-weight: 900;
+			}
+           #dao{
+           	color: #FFB6C1;
+           	font-family: "思源宋体 Heavy";
+           padding-top: -10px;
+           font-size: 22px;
+           }
+		</style>    
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<div class="shang">
+<!--标题文案start-->
+    <div class="biaoti">
+    	    <p class="biao">佳作欣赏</p>
+    	    <div class="ti">
+    		<p>新古典主义，是启蒙运动里的诗意篇章，它汲取革命与自由的精髓，展现出永恒的优雅与纯粹。</p>
+    		<p>大卫作为创始人与奠基人，他的作品不胜枚举。而靳尚谊作为中国当代油画的代表人物，以一幅《塔吉克新娘》开创了新古典主义在中国的历程</p>
+    		<p>向下滑动，在新古典佳作的回廊中打转，与名画来一场美好的邂逅。</p>
+    		</div>
+    </div>
+<!--标题文案end-->
+       
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#qing"><img src="svg/了解更多.png"  alt="图片损坏"  width="180px" height="180px" class="zhiyin-circle1"/></a>
+        	<a href="#qing"><img src="svg/向上粗箭头.png"  alt="图片损坏"  width="35px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->   
+
+<!--焦点图切换轮播图start-->
+    <div class="container">
+        <ul>
+            <li><img src="佳作欣赏/焦点图切换轮播图/苏格拉底之死.jpg"  alt=""></li>
+            <li><img src="佳作欣赏/焦点图切换轮播图/阿迦门农的使节.png" alt=""></li>
+            <li><img src="佳作欣赏/焦点图切换轮播图/雷奥尼达在温泉关.jpg" alt=""></li>
+            <li><img src="佳作欣赏/焦点图切换轮播图/荷马礼赞.jpg" alt=""></li>
+            <li><img src="佳作欣赏/焦点图切换轮播图/做梦的女人.png" alt=""></li>
+            <li class="big-img"></li>
+            <li class="frame"></li>
+        </ul>
+    </div>
+<!--焦点图切换轮播图end-->     
+</div>
+
+<!--手风琴轮播图start-->
+    <div class="shell1" id="qing">
+        <div class="box1">
+            <img src="佳作欣赏/手风琴效果图/横图/处决自己儿子的布鲁特斯.jpg">
+            <span>处决自己儿子的布鲁特斯</span>
+          <p>
+            布鲁特斯是公元前510年古罗马第一个推翻暴君统治的英雄，他建立了罗马共和国，并成为贤明的执政官。
+            但是他的两个亲生儿子参与了复辟阴谋活动，布鲁特斯为捍卫共和国的利益和神圣的法律，毅然处决了这两个逆子。
+            这幅画中所描绘的是武士们将被处决的儿子尸体抬进大厅的一个瞬间，布鲁特斯的妻子作为母亲悲痛欲绝，两个女儿恐怖地依偎着母亲；
+            布鲁特斯虽显示得刚毅坚强，但毕竟处决的是自己的亲生儿子，这时作为父亲不可避免地陷入常人所具有的痛苦之中。
+            画家特意将他安坐在一尊古罗马的英雄雕像投影下，利用朦胧模糊的光影既表现了布鲁特斯的形象又刻画了他复杂的内心世界，英雄的雕像是他依托的精神支柱，
+            隐约的人物动势中体现出坐立不安的心态。画家树立了一个大义灭亲的君王形象。</p>
+        </div>
+        <div class="box1">
+            <img src="佳作欣赏/手风琴效果图/横图/雷奥尼达在温泉关.jpg">
+            <span>雷奥尼达在温泉关</span>
+            <p>这是一幅大卫历时15年创作才完成的画。这幅画以历史题材为背景，描绘了古代斯巴达国王列奥尼达在温泉关牺牲的场景。
+            	画中的主角是列奥尼达，他是一位古代斯巴达的国王。斯巴达是一个古希腊的城邦国家，以军事和纪律严明的文化而闻名。
+            	在画面中，列奥尼达站在一座小山的山顶上，手持长矛，身披盔甲，身后是他忠诚的士兵们。他们面对着前方一群波斯士兵，气氛紧张，战斗即将爆发。
+            	背景上有一座古代建筑，据历史记载，这是波斯王子小居鲁士向列奥尼达提出挑战的地方。这座建筑物的存在暗示着列奥尼达的英勇和尊严，也使得整个场景更加具有历史感。
+            	它通过细致入微的刻画和丰富的色彩表现出了列奥尼达的英勇形象和斯巴达士兵的忠诚与勇气。
+            	</p>
+        </div>
+        <div class="box1">
+            <img src="佳作欣赏/手风琴效果图/横图/被维纳斯解除武装的战神马尔斯.png">
+            <span>被维纳斯解除武装的战神马尔斯</span>
+            <p>《维纳斯与被三美神解除武装的马尔斯》是古典主义没落前夕的回光返照，是学院式古典画法则的最后一幅杰作。
+            	三美神中两位美神取走马尔斯的头盔和盾牌；马尔斯自己也主动交出宝剑；另一位美神为战神送上美酒；维纳斯也为自己的情人戴上花环；
+            	小爱神丘比特解开父神的鞋带，这一切表明战争已经结束了，让立功的勇士们尽情地享受美酒和爱情，表现出画家祈求和平的愿望。
+            	 画面的布局十分讲究，三美神被置于背景中，中景是享受爱情美酒的战神和爱神的主体形象，人体组合成大X型，背景是希腊科林斯式柱头，这是古典主义画家爱用的背景装饰造型，
+            	 横竖的直线衬托前景人体姿态的曲线变化，造成线条和色彩的对比美感，这一切人物环境又凌驾于云朵之上，翻滚的云层使画面又朦上一层神秘之感，这是现实与幻想、具象与抽象、古典与现实的结合。
+            	</p>
+        </div>
+        <div class="box1">
+            <img src="佳作欣赏/手风琴效果图/横图/拿破仑一世加冕大典.jpg">
+            <span>拿破仑一世加冕大典</span>
+            <p>《拿破仑一世加冕大典》是大卫真实记录1804年12月2日在巴黎圣母院隆重举行的拿破仑一世加冕大典的一幅油画杰作。
+            	为了巩固帝位，拿破仑这位皇帝极其傲慢地让罗马教皇庇护七世亲自来巴黎为他加冕，目的是借教皇在宗教上的巨大号召力，让法国人民以至欧洲人民承认他的"合法地位"。在加冕时，拿破仑拒绝跪在教皇前让庇护七世加冕。
+            	而是把皇冠夺过来自己戴上。画家特为避免这一事实，煞费苦心地选用皇帝给皇后加冕的后半截场面。这样，既在画面上突出了拿破仑的中心位置（拿破仑站起来给皇后加冕），又没有使教皇难堪。
+                                      由于这幅画有一百多个人物，每个人物都有不同的服饰，姿态和表情，复杂的环境和众多人物所应该有的光影效果和复杂色彩层次的把握，是一幅世界著名的高难度巨幅人物组油画。
+            	</p>
+        </div>
+        <div class="box1">
+            <img src="佳作欣赏/手风琴效果图/横图/马尔斯竞技广场的军旗授予式.png">
+            <span>马尔斯竞技广场的军旗授予式</span>
+            <p>法国凡尔赛宫 《马尔斯竞技广场的军旗授予式》是一幅历史画，描绘军队向称帝的拿破仑宣誓效忠，拿破仑授予他们军旗。场面宏伟，军人们群情激奋，表现出拿破仑无上权威。
+            	就绘画本身而论，这是一幅现实主义作品，但由于逢迎造神而使画面过分渲染崇拜气氛，政治色彩浓重，艺术只是起到为这一历史事件树碑立传之功能。
+            	画家以极精致的笔法描绘了众多人物肖像和衣着配饰，具有物质感，是古典主义中的细密形式，但是服饰的繁琐、旗帜的喧哗有喧宾夺主之处。
+            	</p>
+        </div>
+    	<p class="dawe">大卫作品专题</p>
+    	<p class="dawe"  id="xinniang">靳尚谊专题</p>
+    </div>
+ <!--手风琴轮播图end-->  
+ 
+<!--《塔吉克新娘》专题start-->   
+
+<div class="ke" id="ke">
+			<label for="button1" class="button" style="--i:2">Others</label>
+			<input type="radio" id="button1" name="page" checked>
+			<div class="page">
+				<div class="page_content">
+					<h1>其他代表作</h1>
+					<p>《青年女歌手》(左上)、《晚年黄宾虹》(右上)、《鲁迅》(左下)、《八大山人》(右下)等。</p>
+					<p>《青年女歌手》：模特是大学时期的彭丽媛。为了充分体现人物深层本质的性格，靳尚谊选取日常的一个动作，使之处于朴素的生活状态，
+						让生命自由袒露，让情感像呼吸一样得到最无拘束的抒发，整个人物形象像一朵静静的白莲，安详宁静，含蓄内敛，
+						抽去了具体对象的物质性，赋予了一种充满抽象意味的精神感受。</p>
+					<p>	《晚年黄宾虹》：晚年的中国画四大家之一黄宾虹先生身着长袍，坐在藤椅之上，背景以黄宾虹水墨山水作品为衬托。
+						在画作中多使用小笔触，靳尚谊希望中国画当中的皴点与油画创作中的点彩相结合，来表现中国艺术的民族文化精神。</p>
+
+				</div>
+			</div>
+			
+			<label for="button2" class="button" style="--i:1">Artist</label>
+			<input type="radio" id="button2" name="page" checked>
+			<div class="page">
+				<div class="page_content">
+					<h1>靳尚谊</h1>
+					<p>1934年12月出生于河南焦作，中国当代油画艺术家、教育家。</p>
+					<p>1982年靳尚谊赴美国进行艺术考察，在美国东、西部各大博物馆观摩，研究了大量欧洲油画的精品，对欧洲油画的语言和特性有了独到的理解，
+						悟到了欧洲传统油画中所具有强明暗体系的特性。</p>
+					<p>	回到中国后，靳尚谊在新疆塔什库尔干等塔吉克少数民族地区采风，正巧赶上当地一对男女青年举行婚礼。
+						靳尚谊采取现场素描形式，先将新娘的身姿、羞涩、服饰等勾画下来，以作为创作素材进行储备。
+						回到北京，经过一番巧妙构思，挥动笔墨油彩，采取油画形式，一口气画了一幅塔吉克新娘肖像，取名《塔吉克新娘》。</p>
+				</div>
+			</div>
+			
+			<label for="button3" class="button" style="--i:0">Work</label>
+			<input type="radio" id="button3" name="page" checked>
+			<div class="page">
+				<div class="page_content">
+					<h1>《塔吉克新娘》</h1>
+					<p>《塔吉克新娘》是1983年靳尚谊创作的布面油彩画，现收藏于中国美术馆。</p>
+					<p>该画运用强明暗的处理，轮廓明确、色彩单纯强烈，表现了一位羞涩含蓄、典雅恬静的新疆妇女，以塔吉克新娘优美动人的形象，略带羞涩、拘谨的表情，
+						对追求幸福生活的强烈、奔放的感情，予人一种美好、纯洁的触动，表现出作者对生活的主观感受和强烈向往，把艺术风格、审美理想、生活抱负融为一体。</p>
+					<p>	该画将中国审美趣味的“意”与西方油画语言的“形”相融合，表现出现实生活中中国人的精神美、人性美，鲜明地体现了作者的艺术追求。</p>
+						<p id="dao">	这幅画也被当时中国油画界认定为“新古典主义”的开始。</p>
+				</div>
+			</div>
+			</div>
+
+<!--《塔吉克新娘》专题end-->
+ 
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="180px" height="180px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向下粗箭头.png"  alt="图片损坏"  width="35px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->	 
+
+	</body>
+</html>

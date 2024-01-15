@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>新古典回廊</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			body{
+				background-image:url(网站首页/img/background1_.png) ; 
+				background-repeat:repeat ;	
+				background-size:cover;
+				perspective: 20000px;
+			}
+			body,html{
+			    scroll-behavior: smooth ;
+			}
+			.father{
+				position:relative;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+			}
+			.nav{
+				position:fixed;
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.zhutu{			
+				position:relative;
+				z-index: 1;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+			}
+			.zhutu img{
+				position:absolute;
+				top: 68px;
+				left: 50%;
+				margin-left:-600px;			
+			}
+			.zhutu-slogan{
+			    position:absolute;
+			    left: 440px;
+			    top:130px;
+			    font-size: 45px;
+			    font-family: "Vladimir Script";
+			    font-style: italic;
+				z-index: 2;	
+				color: #FFFF99;
+				padding-left:20px ;
+				padding-right:20px ;
+				
+			}
+			.zhutu-slogan:hover{
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				border-radius:20px 20px 20px 20px ;
+			}
+			.zhutu-title{
+				position:absolute;
+				right: 150px;
+				top:220px;
+				font-size: 70px ;
+				font-family: "思源宋体 Heavy";
+				font-style: italic;
+				text-align: center;
+				z-index: 2;
+				color: #FFFF99;
+				padding:10px;
+				
+			}
+			.zhutu-title:hover{
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				border-radius:20px 20px 20px 20px ;
+			}	
+			.zhutu-Chinese{
+				position:absolute;
+				right: 420px;
+				top:430px;
+				font-size: 20px ;
+				font-family: "幼圆";
+				font-style: italic;
+				text-align: center;
+				z-index: 2;
+				color: #FFFF99;
+				border-radius:20px 20px 20px 20px ;
+				padding:10px;
+			}
+			.zhutu-Chinese:hover{
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+			}	
+			.zhiyin1{
+				justify-content: center;
+                align-items: center;
+                position:fixed;
+                z-index:10;  
+                right:50%;
+                margin-right:-700px;
+                bottom:60%;   
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				right:75px;
+                bottom:60px;
+                z-index:10;
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:fixed;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                top:3000px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:78px;
+                bottom:75px;
+                z-index:10;
+			}
+			#dingwei1{
+				position:relative;
+                top: 900px;
+				width:1200px;
+				height:auto;
+				margin:0 auto;	
+			}
+			#dingwei1 img{
+				position:absolute;
+			}
+			#mid{
+				position:relative;
+                top: 950px;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+				z-index:2;
+			}
+            #mid img{
+				position:absolute;
+				left:50%;
+                margin-left:-150px ;
+			}
+			.M{
+				position:relative;
+				width:1200px;
+				height:900px;
+				top: 1050px;
+				margin:0 auto;
+				overflow: hidden;
+			}
+			.middle1{
+				position:absolute;
+				background-image:url(网站首页/画廊速览/画派起源.png);
+				background-size: 300px 400px;
+				width:300px;
+				height:400px;
+				overflow: hidden;
+				transition:opacity 1s ease;
+			}	
+			.middle2{
+				position:absolute;
+				background-image:url(网站首页/画廊速览/佳作欣赏.png);
+				background-size: 600px 400px;
+				width:600px;
+				height:400px;
+				left:300px;	
+				overflow: hidden;
+			}
+			.middle3{
+				position:absolute;
+				background-image:url(网站首页/画廊速览/名家与画.png);
+				background-size: 300px 400px;
+				width:300px;
+				height:400px;
+				left:900px;	
+				overflow: hidden;
+			}
+			.middle4{
+				position:absolute;
+				background-image:url(网站首页/画廊速览/画廊简介.png);
+				background-size: 600px 400px;
+				width:600px;
+				height:400px;
+				top:400px;	
+				overflow: hidden;
+			}
+			.middle5{
+				position:absolute;
+				background-image:url(网站首页/画廊速览/精心推荐.png);
+				background-size: 600px 400px;
+				background-position: center;
+				width:600px;
+				height:400px;
+				left:600px;	
+				top:400px;	
+				overflow: hidden;
+			}
+			.M img{
+				opacity: 1;  
+			}
+			.M img:hover{
+				opacity: 0;
+
+			}
+
+			#dingwei2 img{
+			position:absolute;
+			}
+			#bot{
+			position:relative;
+            top: 1100px;
+			width:1200px;
+			height:auto;
+			margin:0 auto;
+				
+			}
+            #bot img{
+			position:absolute;
+			left:50%;
+               margin-left:-150px ;
+			}
+		  #tuijian{
+		   	position:relative;
+		   	width:600px;
+		   	height:400px;
+		   	top:1200px;
+		   	margin: 150px auto;
+		   	transform-style: preserve-3d;
+		   	animation: rotate 60s linear infinite;
+		   	background: url(网站首页/img/Neoclassical Cloister(带背景).jpg) no-repeat;
+		   	background-size:100% 100% ;
+		   }
+		   #tuijian:hover{
+		   animation-play-state:paused;
+		   }
+		   
+		   @keyframes rotate{
+		   	0%{transform: rotateY(0);}
+		    100%{transform: rotateY(360deg);}
+		    }
+
+		    #tuijian div{
+		   	position:absolute;
+		   	top:0;
+		   	left:0;
+		   	width:100%;
+		   	height:100%;
+		   }
+		     #tuijian div:nth-child(1){
+		   	transform: rotateY(0deg) translateZ(600px);
+		    
+		   }
+		     #tuijian div:nth-child(2){
+		   	transform: rotateY(60deg) translateZ(600px);
+		   }
+		     #tuijian div:nth-child(3){
+		   	transform: rotateY(120deg) translateZ(600px);
+		   }
+		    #tuijian div:nth-child(4){
+		   	transform: rotateY(180deg) translateZ(600px);
+		   }
+		    #tuijian div:nth-child(5){
+		   	transform: rotateY(240deg) translateZ(600px);
+		   }
+		    #tuijian div:nth-child(6){
+		   	transform: rotateY(300deg) translateZ(600px);
+		   }
+		   .child1{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   .child2{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   .child3{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   .child4{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   .child5{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   .child6{
+		   	background-color:#CF2212;
+		   	background-size:100% 100% ;
+		   }
+		   	.last{
+		   		position:absolute;
+				height:60px;
+                margin:0 auto;
+				border-color:#EBD4BB;
+				top:3000px;
+				left:50%;
+				margin-left:-150px;
+				}
+			.last p{
+				color: white;
+				font: 12px;
+				}
+		</style>
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+		<div class="father">				
+<!--上part-->
+			<div class="zhutu">	
+			    <div class="zhutu-img">	
+					 <img src="网站首页/img/主图暗.png" alt="图片损坏"  width="1200px" height="700px"/>		
+                   </div>
+			     <div class="zhutu-slogan">
+				     <p>Neoclassical Cloister</p>
+				   </div>
+			     <div class="zhutu-title">
+				    <p>The charm of classicism,</p>
+				    <p>all in one place</p>
+				   </div>
+				 <div class="zhutu-Chinese">
+				 	<p>古典之韵，尽在其中</p>
+				    <p>新古典回廊,感受英雄革命时代的古典回响</p>
+				   </div>
+			</div>
+        </div>
+<!--上part-->
+
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#dingwei1"><img src="svg/了解更多.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle1"/></a>
+        	<a href="#dingwei1"><img src="svg/向下箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->
+
+<!--中part--><div id="dingwei1">
+            	</div>
+            <div id="mid">
+            	<img src="网站首页/画廊速览/画廊速览.png" alt="图片损坏" width="300px" height="auto"/>
+            	</div>
+            <div class="M">
+			<div class="middle1">
+				<a href="画派起源.html"><img src="网站首页/画廊速览/zuo1.jpg" alt="图片损坏"  width="300px" height="400px"/></a>
+			</div>	
+			<div class="middle2">
+				<a href="佳作欣赏.html"><img src="网站首页/画廊速览/zhong1.jpg" alt="图片损坏"  width="600px" height="400px"/></a>
+			</div>
+            <div class="middle3">
+            	<a href="名家与画.html"><img src="网站首页/画廊速览/you1.jpg" alt="图片损坏"  width="300px" height="400px"/></a>
+            </div>
+            <div class="middle4">
+            	<a href="联系我们.html"><img src="网站首页/画廊速览/zuo2.jpg" alt="图片损坏"  width="600px" height="500px"/></a>
+            </div>
+            <div class="middle5">
+            	<a href="佳作欣赏.html#ke"><img src="网站首页/画廊速览/you2.jpg" alt="图片损坏"  width="600px" height="500px"/></a>
+            </div>
+			</div>
+            </div>
+<!--中part-->
+<!--下part-->
+            <div id="dingwei2">
+            </div>
+            <div id="bot">
+            	<img src="网站首页/随心推荐/随心推荐.png" alt="图片损坏" width="300px" height="auto"/>
+            </div>
+            	<!--<!--<div class="outer">-->
+            		<section id="tuijian">
+					<div class="child1"><a href="名家与画-大卫.html#MaLa"><img src="大卫/马拉之死.jpg" alt="图片损坏"  width="100%" height="100%"/></a></div>
+					<div class="child2"><a href="名家与画-雅姆·蒂索.html#ZuoMeng"><img src="雅姆·蒂索/做梦的女人.png" alt="图片损坏"  width="100%" height="100%"/></a></div>
+					<div class="child3"><a href="名家与画-安格尔.html#Ajia" ><img src="安格尔/阿迦门农的使节.png" alt="图片损坏"  width="100%" height="100%"/></a></div>
+					<div class="child4"><a href="名家与画-大卫.html#HeLa" ><img src="大卫/贺拉斯兄弟之誓.jpg" alt="图片损坏"  width="100%" height="100%"/></a></div>
+					<div class="child5"><a href="名家与画-雅姆·蒂索.html#TaiWu" ><img src="雅姆·蒂索/泰晤士河.png" alt="图片损坏"  width="100%" height="100%"/></a></div>
+					<div class="child6"><a href="名家与画-安格尔.html#DaGong" ><img src="安格尔/大宫女.jpg" alt="图片损坏"  width="100%" height="100%"/></a></div>
+				</section>
+				
+<!--下part-->
+<!--尾part-->
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向上箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->
+
+            <div class="last">
+            	<p id=R>版权声明©2023 ZYC.All Rights Reserved</p>
+			</div>
+<!--尾part-->
+
+	</body>
+</html>

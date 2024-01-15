@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>画派起源</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			/*body{
+				background-repeat:repeat ;	
+				background-size:cover;
+				perspective: 20000px;
+			}*/
+			body,html{
+			    scroll-behavior: smooth ;
+			}
+			.nav{
+				/*position:fixed;*/
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }
+			.shell {
+				width: 100%;
+				position: relative;
+				padding: 80px 0;
+				transition:0.3s ease 0s;
+				background-attachment: fixed ;
+				background-size: cover;
+			}
+			.shell:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(99,99,99,0.8);
+				content:"";
+			}
+			
+			.header {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 100px;
+				position: relative;
+			}
+			
+			.title{
+				color: #FFFF99;
+				font-size:144px;
+				font-weight: normal;
+				margin-top:-20px;			
+				font-family: "楷体";
+				font-weight: 900;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+			}
+			.yinyan{
+				color: #fff;
+				font-size:24px;
+				font-weight: normal;
+				width:1200px;
+				margin: 0 auto;
+				text-indent:2em;
+				line-height: 40px;
+				padding-bottom: 10px;
+				font-family: "幼圆";
+				text-align: left;
+			}
+			
+			.zhiyin1{
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                right:50%;
+                margin-right:-750px;
+                top:700px;  
+			}	
+			.zhiyin1 .zhiyin-circle1{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			.zhiyin1 .zhiyin-arrow1{
+				position:absolute;
+				right:75px;
+                bottom:60px;
+                z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2{
+				justify-content: center;
+                align-items: center;
+                position:absolute;
+                z-index:10;  
+                left:50%;
+                margin-left:85px ;
+                bottom:70px;
+			}	
+			.zhiyin2 .zhiyin-circle2{
+				 position:absolute;
+				right:20px;
+                bottom:20px;
+                animation:rotate 7s linear 0s infinite;/*综合动画属性*/
+               z-index:10;
+			}
+			@keyframes rotate{/*旋转花纹动画效果*/
+				0%{transform:rotate(0deg)}
+				100%{transform:rotate(360deg)}
+			}
+			.zhiyin2 .zhiyin-arrow2{
+				position:absolute;
+				right:75px;
+                bottom:75px;
+                z-index:10;
+			}
+			#dingwei1{
+				position:relative;
+				width:1200px;
+				height:auto;
+				margin:0 auto;
+				padding-top:50px;	
+			}
+			#dingwei1 img{
+				position:absolute;
+			}
+			#dingwei2 img{
+			position:absolute;
+			}
+			.timeline{
+				display: flex;
+				margin-left:30px;
+				margin-right:35px;
+				flex-wrap: wrap;
+				flex-direction: column;
+				max-width: 1500px;
+				position: relative;
+				margin: 0 auto;
+			}
+			.content-title{
+				font-weight: normal;
+				font-size:66px;
+				margin:-10px 0 0 0;
+				transition: 0.4s;
+				padding: 0 10px;
+				box-sizing: border-box;
+				color: #fff;
+				
+			}
+			.content-desc{
+				margin:0 auto;
+				font-size: 15px;
+				box-sizing: border-box;
+				color: rgba(255,255,255,0.7);
+				line-height: 25px;
+				text-indent:2em;
+				
+			}
+			.timeline:before {
+				position: absolute;
+				left: 50%;
+				width: 2px;
+				height: 100%;
+				margin-left:-1px;
+				content:"";
+				background: rgba(255,255,255,0.07);
+			}
+			.item{
+				padding-bottom:200px;
+				padding-left:50px
+				opacity: 0.3;
+				filter: blur(2px);
+				transition: 0.5s;
+				box-sizing:border-box;
+				width: calc(50% - 40px);
+				display: flex;
+				position: relative;
+				transform: translateY(-80px);	
+			}
+			.item:before{
+				content: attr(data-text);
+				letter-spacing: 3px;
+				width:100%;
+				position: absolute;
+				color: rgba(255,255,255,0.5);
+				font-size: 13px;
+				border-left: 2px solid rgba(255,255,255,0.5);
+				top:70%;
+				margin-top: -5px;
+				padding-left: 15px;
+				opacity: 0;
+				right: calc(-100% - 56px);
+				font: 900 20px '';
+				letter-spacing: 5px;
+			}
+			.item:nth-child(even){
+			    align-self: flex-end;	
+			}
+			.item:nth-child(even):before {
+				right: auto;
+				text-align: right;
+				left: calc(-100% - 56px);
+				padding-left: 0;
+				border-left: none;
+				border-right: 2px solid rgba(255,255,255,0.5);
+				border-right: 15px;
+			}
+			.item--active{
+				opacity: 1;
+				transform: translateY(0);
+				filter:blur(0px);
+			}
+			.item--active:before{
+				top:50%;
+				transition: 0.3s all 0.2s;
+				opacity: 1;
+			}
+			.item-active .content-title {
+				margin: -50px 0 20px 0;
+			}
+			.img{
+				max-width:100%;
+				box-shadow:0 10px 15px rgba(0,0,0,0.4);	
+				padding:50px;
+			}
+			.subtitle{
+				color: rgba(255,255,255,0.5);
+				font-size: 48px;
+				letter-spacing: 5px;
+				margin: 10px 0 0 0;
+				font-weight: normal;
+				padding-top:20px;
+				padding-bottom:50px;
+			}
+			.footer{
+				padding: 95px 0;
+				text-align:center;
+			}
+			.footer a{
+				color: #999;
+				display: inline-block;
+			}
+			@media only screen and (max-width: 767px) {
+				.item{
+					align-self:baseline !important;
+					width:100%;
+					padding: 0 30px 150px 80px;
+		    }
+				.item:before {
+					left: 10px !important;
+					padding:0 !important;
+					top: 50px;
+					text-align: center !important;
+              	    width: 60px;
+              	    border: none !important;
+		    }
+			    .item:last-child {
+				    padding-bottom: 40px ;				
+			}
+			@media only screen and (max-width: 767px){
+			   	.timeline:before {
+			   		left: 40px;
+			}
+		</style>
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">联系我们</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<!--悬浮指引-->
+        <div class="zhiyin1">
+        	<a href="#dingwei1"><img src="svg/了解更多.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle1"/></a>
+        	<a href="#dingwei1"><img src="svg/向下箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow1"/></a>
+        </div>
+<!--悬浮指引-->
+
+
+<div class="shell" id="shell">
+			<div class="header">
+				<h2 class="title">画派起源</h2>
+				<h3 class="subtitle">ORIGIN OF PAINTING SCHOOL</h3>		
+				<h6 class="yinyan">
+				在法国大革命及其政治和社会改革之前，有一场纯粹的艺术革命，这就是新古典主义美术运动。
+				这一时期的法国美术既不是古希腊和罗马美术的再现，也非17世纪法国古典主义的重复。
+				它是欧洲古典美术适应资产阶级革命形势的一场借古开今的潮流。</h6>
+				<h6 class="yinyan">同时，因为这场新古典主义美术运动与法国大革命紧密相关，所以也有人称之为“革命的古典主义”。
+				与衰落的巴洛克美术、洛可可艺术风格相对，它代表借复古以开今的潮流，并标志了一种新的美学观念。
+				从某种意义上说，它是与启蒙运动和理性时代相适应的美术样式。</h6>
+				
+			</div>
+			<div id="dingwei1">
+            	<img src="img/画廊速览.png" alt="图片损坏" width="0px" height="auto" />
+            	</div>
+		<div class="timeline">
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/达芬奇之死.jpg" alt="" class="img" width="520px" height="292px" />
+					<h2 class="content-title">概述</h2>
+					<p class="content-desc">
+					以复兴古希腊罗马艺术为旗号的古典主义艺术，早在17世纪的法国就已出现。一直延续到19世纪初，成为欧洲文学艺术的主要思潮。
+					所谓古典主义，就是以古希腊、古罗马的文学艺术为典范而得名。
+					到了18世纪中叶，庞贝城的发掘，德国学者温克尔曼美学思想的传播，引起了人们对古典主义的兴趣，古典主义又重新复兴起来，故称新古典主义。
+					</p>
+				</div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/鹰旗颁授典礼.jpg" alt="" class="img" width="520px" height="292px" />
+					<h2 class="content-title">17世纪</h2>
+					<p class="content-desc">
+						17世纪出现了一个新现象。
+						法兰西人作为拉丁民族，是古罗马的继承人。
+						在政治上罗马帝国始终是法兰西人心目中的光辉的榜样。
+						 “帝国”这个响亮的称号是当时法国统治阶级所心醉神迷的。
+						 他们想在法兰西的土地上恢复古罗马帝国处在奥古斯都时代的那种宏伟的排场， 在文艺上也很想效仿古罗马的风格。
+						 所以说，法国古典主义的原型是拉丁古典主义。
+					</p>
+				</div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/1675年路易十四建立荣军院.jpg" alt="" class="img" width="520px" height="292px">
+					<h2 class="content-title">路易十四时代</h2>
+					<p class="content-desc">
+						法国的17世纪被称为路易十四时代，这位称霸欧洲的君主不忘建立统一的官方艺坛。
+						为国王及其统治集团服务的艺术，把古代和当时的思想、天主教和世俗的思想兼收并蓄，并让现实描写带上神话的外表。
+						它崇尚古典精神，表现出严整、高贵、酷爱秩序的特点。他们以希腊、罗马为典范。
+						套用马克思所提到的一句话来说，法国古典主义就是穿着古罗马的服装，用借来的语言，上演世界历史的新场面。
+					</p>
+		        </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/The Abduction of Europe.jpg" alt="" class="img" width="520px" height="292px">
+					<h2 class="content-title">18世纪初</h2>
+					<p class="content-desc">
+						 18世纪初，法国的传统封建贵族仍然把持着国家政权，他们掌控着政治、经济、艺术界，流行精致的洛可可风格。
+					       但是，资产阶级在此时逐渐壮大，他们对政治经济环境开始感到不满，逐渐在政治上试图发出自己的声音。
+					       伴随着革命的热情，新古典主义慢慢显露。
+					</p>
+		        </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/庞贝城的末日.jpg" alt="" class="img"  width="520px" height="292px">
+					<h2 class="content-title">18世纪中</h2>
+					<p class="content-desc">
+					   1748年，考古学家们开始对古罗马城市遗址——庞贝城进行发掘工作。
+					   随之揭示开的还有古希腊罗马艺术的辉煌成就，这使艺术家们开始重新审视古典艺术，并从中汲取灵感。
+					同时期，在启蒙运动的影响下，学者们对美学也有了新的阐释。
+					以德国著名学者和艺术评论家温克尔曼的美学思想为代表，他提出了“高贵的单纯，静穆的伟大”的美学思想。
+					经历古代繁荣艺术的重现与当代学者的理论更新，新古典主义进程进一步推动。
+					</p>
+		        </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/自由引导人民.jpg" alt="" class="img"  width="520px" height="292px">
+					<h2 class="content-title">1789 法国</h2>
+					<p class="content-desc">
+						1789年，法国大革命前夕，资产阶级为取得革命的胜利，在意识形态领域高举反封建反宗教神权、争取人类理想胜利的旗帜，号召和组织人民大众起来为资产阶级革命而献身。
+						为取得这一革命斗争的彻底胜利，首先要在人们的心理上注入为革命献身的美德和勇气，那就是为共和国而战斗的英雄主义精神。
+						古代希腊罗马的英雄成了资产阶级所推崇的偶像，资产阶级革命家利用这些古代英雄，号召人民大众为真理而献身。
+						正如马克思所指出的，他们战战兢兢地请出亡灵来给他们以帮助，借用他们的名字、战斗口号和衣服，以便穿着这种久受崇敬的服装，用这种借来的语言，演出世界历史的新场面。
+						就在这样的历史环境下，产生了借用古代艺术形式和古代英雄主义题材，大造资产阶级革命舆论的新古典主义。
+					</p>
+		        </div>
+		    </div>
+		    
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/法厄同的坠落2.jpg" alt="" class="img"  width="520px" height="292px">
+					<h2 class="content-title">1767 西班牙</h2>
+					<p class="content-desc">
+						与此同时，1767年，西班牙全国掀起了驱逐耶稣会教士的活动，西班牙兴起了古典主义的建筑风格。
+						在耶稣会失利的情况下，巴洛克风格的建筑也随之日益衰落。
+						来自法国的腓力五世，虽然是西班牙的国王，一心想着的是法国建筑风格。
+						他从法国、意大利请来多位建筑师为他服务，极力提倡古典主义。
+						如古典主义的著名的马德里普拉多博物馆、天文台就是这一时期的作品。
+						新古典主义美术逐渐在整个欧洲走向普及。
+					</p>
+				</div>
+			</div>
+			
+			<div class="item" data text="《你的孤独，虽败犹荣》">
+				<div class="content">
+					<img src="画派起源/劫夺萨宾妇女.jpg" alt="" class="img"  width="520px" height="292px">
+					<h2 class="content-title">小结</h2>
+					<p class="content-desc">
+						新古典主义被罗伯斯庇尔等革命领袖在掌权后定为新政权的官方艺术风格，
+						不过这里的古典主义已不同于文艺复兴时期和17世纪的古典主义。
+						虽然还是如同古典主义一般以古希腊和古罗马题材为典范和样板，
+						但表现和宣扬的内容核心却变成了体现革命精神和维护共和政体，它“以希腊为典范的旗帜”，
+						追求古典文化和英雄精神。
+					</p>
+				</div>
+		    </div>
+	    </div>
+	    
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	    <script>	
+	    	(function ($){
+	    		$.fn.timeline = function(){
+	    			var selectors = {
+	    				id: $(this),
+	    				item: $(this).find(".item"),
+	    				activeClass: "item--active",
+	    				img:".img"
+	    			};
+//	    			激活第一个时间轴项目,并设置时间轴背景图片为第一个项目图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                	"background-image",
+                	"url(" +
+                	selectors.item.first()
+                	.find(selectors.img)
+                	.attr("src") +
+                	")"
+                );
+                	//获取时间轴项目的总数
+                	var itemLength = selectors.item.length;
+                	//当页面滚动时，触发滚动事件
+                	$(window).scroll(function () {
+                	var max, min;
+                	//获取页面滚动的距离
+                	var pos = $(this).scrollTop();
+                	selectors.item.each(function (i) {
+                		//获取当前时间轴项目的最小和最大高度
+                		min = $(this).offset().top;
+                		max = $(this).height() + $(this).offset().top;
+                		var that = $(this);
+                		//如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                		//则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目
+                		if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                			selectors.item.removeClass(selectors.activeClass);
+                			selectors.id.css(
+                				"background-image",
+                				"url(" +
+                				selectors.item.last()
+                				.find(selectors.img)
+                				.attr("src") +
+                			")"
+                		);
+                		selectors.item.last().addClass(selectors.activeClass);
+                	}
+                	//如果当前位置在当前项目的最小和最大高度之间，
+                    //则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                    else if (pos <= max - 10 && pos >= min) {
+                    	selectors.id.css(
+                    		"background-image",
+                    		"url(" + 
+                    		$(this)
+                    		    .find(selectors.img)
+                    		    .attr("src") + 
+                    		    ")"
+                    	);
+                    	selectors.item.removeClass(selectors.activeClass);
+                    	$(this).addClass(selectors.activeClass);
+                    }
+                 });
+            });
+       };
+    })(jQuery)
+    /*
+     * 最后，我们调用 timeline 插件并传入时间轴的 ID作为参数。
+     * 这将启用时间轴插件并为该时间轴绑定滚动事件。
+     */
+    $("#shell").timeline();
+	    </script>	
+<!--悬浮指引-->
+        <div class="zhiyin2">
+        	<a href="#"><img src="svg/回到顶部.png"  alt="图片损坏"  width="132px" height="132px" class="zhiyin-circle2"/></a>
+        	<a href="#"><img src="svg/向上箭头.png"  alt="图片损坏"  width="20px" height="auto" class="zhiyin-arrow2"/></a>
+        </div>
+<!--悬浮指引-->
+	</body>
+</html>

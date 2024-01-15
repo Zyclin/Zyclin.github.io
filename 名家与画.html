@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon"href="img/小图标.png">
+		<title>名家与画</title>
+		<style>
+			*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins',sans-serif;          			
+		    }
+			body{
+			    scroll-behavior: smooth ;
+			    background-image: url(名家与画/主图-画室.png) ;
+			    background-size: cover ;
+			    background-position: bottom;
+			    justify-content: center;
+			    align-items; center;
+			    min-height: 100vh;	
+			}
+			.nav{
+				/*position:fixed;*/
+				z-index:11;
+				background-color:darkred;
+				box-shadow: 0 8px 16px rgba(0,0,0,1);
+				height:65px;
+				width:100%;	
+				display: flex;
+			}
+			.logo{
+				position:relative;
+				z-index: 2;
+				left:50%;
+				margin-left:-600px;
+				padding-top:10px;
+				padding-left:10px;
+				padding-right:10px;
+				background-color: rgba(255,255,255,0.2);
+				overflow: hidden;
+				border-radius:0px 0px 20px 20px ;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				border: 1px solid darkred;
+			}
+			.logo:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }	
+			.nav-line ul{
+            	list-style: none;
+            	position: absolute;
+				z-index: 2;
+				right:50%;
+				margin-right:-600px;
+				line-height: 20px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: rgba(255,255,255,0.2);
+			    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			    overflow: hidden;
+			    border-radius:0px 0px 20px 20px ;
+			    
+            }
+            .nav-line ul li{
+            	position: relative;
+			    padding-right: 20px;
+			    padding-top: 20px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    transition: all 1s ease;
+			    border: 1px solid darkred;
+            }
+            .nav-line ul li a{
+			    font: 20px "幼圆";
+			    color: #FFFF99;
+			    text-decoration: none; 
+            }
+            .nav-line ul li:hover{
+            background: linear-gradient(45deg, #F1C40F, #C0392B);
+            }          
+			.shell {
+				width: 100%;
+				position: relative;
+				padding: 80px 0;
+				transition:0.3s ease 0s;
+				background-attachment: fixed ;
+				background-size: cover;
+			}
+			.shell:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(99,99,99,0.8);
+				content:"";
+			}
+			.header {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 100px;
+				position: relative;
+			}
+		.container{
+			position: relative;
+			width: auto;
+			height: auto;
+			display: flex;
+		    justify-content: center;
+			align-items; center;
+		}
+		.container .card{
+			position: absolute;
+			margin-top:130px ;
+			margin-right:-400px ;
+			top:50%;
+			right:50%;
+			width: 280px;
+			height: 480px;
+			border-radius: 8px;
+		    /*background: #5e5cfc;*/
+		   
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    color: rgba(0,0,0,0.2);
+		    font-size: 8em;
+		    font-weight: 700;
+		    border: 10px solid rgba(0,0,0,0.1);
+		    cursor: pointer;
+		    transition: 0.8s;		    
+		    transform-origin: 50% 100%;
+		    transform: rotate(calc(var(--i) * 5deg)) translate(calc(var(--i)
+			* 120px), -50px);
+			color: rgba(0,0,0,0.25);
+			box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+		}
+		.container #c1{
+			 background-image:url(名家与画/安格尔.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+		}
+		.container #c2{
+			 background-image:url(名家与画/大卫.png);
+			 background-repeat:no-repeat ;	
+			 background-size:cover;
+		}
+		.container #c3{
+			 background-image:url(名家与画/雅姆·蒂索.png ) ;
+			 background-repeat:no-repeat ;	
+			 background-size:95% 95%;
+		}
+		.container .card:hover{
+			translate: calc(var(--i) * 20px) -50px;
+			z-index: 100;
+			background: darkred;
+		}
+		    .biaoti{    
+		    	position:relative;
+		    	width: ;
+		    	height: ;
+		    }
+            .biaoti .biao{
+            	position:absolute;
+            	right:50%;
+				top:50%;
+				margin-right:280px;
+				margin-top:100px;
+				font-size: 100px ;			
+				z-index: 2;
+				color: #FFFF99;
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            }
+           .biaoti .ti{
+            	position:absolute;
+            	right:50%;
+				top:50%;
+				margin-right:250px;
+				margin-top:220px;
+				font-size: 24px ;	
+				width:450px;		
+				text-indent:2em;
+				z-index: 2;
+				color: white;
+				padding:10px;
+				text-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            }
+            
+            .biaoti p{
+            	font-family: "楷体";
+            	font-weight:900;
+            }
+            .biaoti .ti p{
+            	font-family: "楷体";
+            	font-weight:500;
+            }
+		</style>    
+	</head>
+	<body>
+<!--导航part-->
+		<div class="nav">
+				<div class="logo">
+					<a href="#">
+					<img src="网站首页/img/Neoclassical Cloister.png" alt="图片损坏" title="Neoclassical corridor（新古典回廊）" width="auto" height="49px">
+					</a>
+				</div>
+				<div class="nav-line">
+					<ul>
+						<li>
+							<a href="网站首页.html">网站首页</a>
+						</li>
+						<li>
+							<a href="画派起源.html">画派起源</a>
+						</li>
+						<li>
+							<a href="名家与画.html">名家与画</a>
+						</li>
+						<li>
+							<a href="佳作欣赏.html">佳作欣赏</a>
+						</li>
+						<li>
+							<a href="联系我们.html">常见问题</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航part-->
+
+<!--标题文案start-->
+<div class="biaoti">
+    	    <p class="biao">名家与画</p>
+    	<div class="ti">
+    		<p>他们的人生历程是新古典里的精彩篇章，他们用独特的艺术语言，诠释着生命的意义与价值。</p>
+    		<p>大卫、安格尔、蒂索都是新古典主义的代表画家，从他们的笔下，我们见证了新古典从奠基、成熟到创新。</p>
+    		<p>点击卡片，以时间轴为线索对大师的生平与创作展开叙事，为你解答名家与画之缘。</p>
+    	</div>
+</div>
+<!--标题文案end-->
+		<!--<div class="zhutu-img">	
+			<img src="img2-3/主图-画室.png" alt="图片损坏"  width="100%" height="100%"/>		
+       </div>-->               
+<!--人头part-->
+        <div class="container">
+			<a href="名家与画-安格尔.html" class="card" id="c1" style="--i:-2;"></a>
+			<a href="名家与画-大卫.html" class="card" id="c2" style="--i:0;"></a>
+			<a href="名家与画-雅姆·蒂索.html" class="card" id="c3" style="--i:2;"></a>
+		</div>
+<!--人头part-->
+       
+ 
+	</body>
+</html>
